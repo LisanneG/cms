@@ -18,34 +18,6 @@
     </tbody>
 </table>
 
-<h2>Questions</h2>
-<% if @location.questions.empty? %>
-<p>No questions were created for this location</p>
-<% else%>
-<table class="table table-hover">
-    <thead>
-      <tr>
-        <th>Vraag</th>
-        <th>Edit</th>
-        <th>Destroy</th>
-      </tr>
-    </thead>
-    <tbody>
-    <% @location.questions.each do |question| %>
-        <tr>
-            <td><%= question.question %></td>
-            <td><%= link_to 'Edit', edit_location_question_path(question), :class => 'btn btn-primary' %></td>
-            <td><%= link_to 'Destroy Question', [question.location, question], method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
-        </tr>
-    <% end %>
-    </tbody>
-</table>
-<% end %>
-
-<% if @location.questions.empty? %>
-<h2>Add a question:</h2>
-<%= render 'questions/form' %>
-<% end %>
 
 <%= link_to 'Edit', edit_location_path, :class => "btn btn-default" %>
 <%= link_to 'Back', locations_path, :class => "btn btn-default" %>

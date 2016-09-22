@@ -1,9 +1,0 @@
-<%= form_for([@location, @location.questions.build]) do |f| %>
-  <div class="form-group">
-    <%= f.label :question %><br>
-    <%= f.text_field :question, :class => "form-control" %>
-  </div>
-  <p>
-    <%= f.submit :class => "btn btn-success" %>
-  </p>
-<% end %>

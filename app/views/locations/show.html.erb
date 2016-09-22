@@ -26,6 +26,7 @@
     <thead>
       <tr>
         <th>Vraag</th>
+        <th>Edit</th>
         <th>Destroy</th>
       </tr>
     </thead>
@@ -33,6 +34,7 @@
     <% @location.questions.each do |question| %>
         <tr>
             <td><%= question.question %></td>
+            <td><%= link_to 'Edit', edit_location_question_path(question), :class => 'btn btn-primary' %></td>
             <td><%= link_to 'Destroy Question', [question.location, question], method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
         </tr>
     <% end %>

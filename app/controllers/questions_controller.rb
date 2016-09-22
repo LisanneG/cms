@@ -1,4 +1,10 @@
 class QuestionsController < ApplicationController
+	def edit
+
+		@location = Location.find(params[:location_id])	
+		@question = @location.question						
+	end
+
 	def create
 		@location = Location.find(params[:location_id])
 		@question = @location.questions.create(question_params)

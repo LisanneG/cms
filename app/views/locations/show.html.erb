@@ -1,40 +1,48 @@
-<p>
-  <strong>Title:</strong>
-  <%= @location.title %>
-</p>
- 
-<p>
-  <strong>Text:</strong>
-  <%= @location.text %>
-</p>
-
-<p>
-  <strong>x:</strong>
-  <%= @location.x %>
-</p>
-
-<p>
-  <strong>y:</strong>
-  <%= @location.y %>
-</p>
+<h2>Location</h2>
+<table class="table table-hover"> 
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Text</th>
+        <th>x</th>
+        <th>y</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><%= @location.title %></td>
+          <td><%= @location.text %></td>
+          <td><%= @location.x %></td>
+          <td><%= @location.y %></td>
+        </tr>
+    </tbody>
+</table>
 
 <h2>Questions</h2>
-<% @location.questions.each do |question| %>
-  <p>
-    <strong>Question:</strong>
-    <%= question.question %>
-  </p>
+<% if @location.questions.empty? %>
+<p>No questions were created for this location</p>
+<% else%>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Vraag</th>
+        <th>Destroy</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @location.questions.each do |question| %>
+        <tr>
+            <td><%= question.question %></td>
+            <td><%= link_to 'Destroy Question', [question.location, question], method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
+        </tr>
+    <% end %>
+    </tbody>
+</table>
 <% end %>
 
+<% if @location.questions.empty? %>
 <h2>Add a question:</h2>
-<%= form_for([@location, @location.questions.build]) do |f| %>
-  <p>
-    <%= f.label :question %><br>
-    <%= f.text_field :question %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
+<%= render 'questions/form' %>
 <% end %>
 
 <%= link_to 'Edit', edit_location_path, :class => "btn btn-default" %>

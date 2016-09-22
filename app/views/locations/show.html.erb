@@ -1,0 +1,41 @@
+<p>
+  <strong>Title:</strong>
+  <%= @location.title %>
+</p>
+ 
+<p>
+  <strong>Text:</strong>
+  <%= @location.text %>
+</p>
+
+<p>
+  <strong>x:</strong>
+  <%= @location.x %>
+</p>
+
+<p>
+  <strong>y:</strong>
+  <%= @location.y %>
+</p>
+
+<h2>Questions</h2>
+<% @location.questions.each do |question| %>
+  <p>
+    <strong>Question:</strong>
+    <%= question.question %>
+  </p>
+<% end %>
+
+<h2>Add a question:</h2>
+<%= form_for([@location, @location.questions.build]) do |f| %>
+  <p>
+    <%= f.label :question %><br>
+    <%= f.text_field :question %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Edit', edit_location_path, :class => "btn btn-default" %>
+<%= link_to 'Back', locations_path, :class => "btn btn-default" %>

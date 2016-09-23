@@ -20,7 +20,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'bootstrap-sass', '~> 3.3.6'
 #gem 'sass-rails', github: 'rails/sass-rails'
 gem 'autoprefixer-rails'
-
+#devise
+gem 'devise'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'welcome/index'
   resources :locations
   resources :questions
+  resources :answers
 
   root 'locations#index'
 end

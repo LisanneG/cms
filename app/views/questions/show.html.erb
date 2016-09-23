@@ -1,4 +1,27 @@
 <p>
   <%= @question.question %>
 </p>
+
+<h2>Answers</h2>
+<% @question.answers.each do |answer| %>
+    <li><strong>Answer:</strong>
+    <%= answer.answer %>
+      <strong>Correct:</strong>
+    <%= answer.correct %></li>
+<% end %>
+<h2>Add Answer</h2>
+<%= form_for([@question, @question.answers.build]) do |f| %>
+    <p>
+    <%= f.label :answer %>
+    <%= f.text_field :answer %>
+    </p>
+    <p>
+      <%= f.label :correct %>
+      <%= f.check_box :correct %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+    <% end %>
 <%= link_to 'back', questions_path, :class => "btn btn-default" %>

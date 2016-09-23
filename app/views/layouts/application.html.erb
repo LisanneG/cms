@@ -10,22 +10,20 @@
 
   <body>
   <div class="container">
-  <% if notice != nil %>
-  <p class="notice alert alert-success"><%= notice %></p>
-  <% end %>
-  <% if alert != nil %>
-  <div class="alert alert-warning"><%= alert %></div>
-  <% end %>
-
-    <% if admin_signed_in? %>
-        <li>
-          <%= link_to('Logout', destroy_admin_session_path, :method => :delete) %>
-        </li>
-    <% else %>
-        <li>
-          <%= link_to('Login', new_admin_session_path)  %>
-        </li>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+    <div id="navigation">
+      <% if admin_signed_in? %>
+        <ul>
+          <li><%= link_to 'Locations', locations_path, :class => 'btn btn-primary' %></li>
+          <li><%= link_to 'Questions', questions_path, :class => 'btn btn-primary' %></li>
+          <li><%= link_to 'Add Admin', new_admin_registration_path, :class => 'btn btn-primary' %></li>
+          <li><%= link_to('Logout', destroy_admin_session_path, :method => :delete, :class => 'btn btn-primary') %></li>
+        </ul>
     <% end %>
+    </div>
+
+
 
     <%= yield %>
   </div>

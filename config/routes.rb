@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :admins
   get 'welcome/index'
   resources :locations
   resources :questions
-  root 'welcome#index'
+
+  root 'locations#index'
 end

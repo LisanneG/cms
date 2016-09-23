@@ -1,2 +1,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+#navigation li {
+  display: inline;
+  list-style-type: none;
+}

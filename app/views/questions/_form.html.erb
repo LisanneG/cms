@@ -1,9 +1,9 @@
 <%= form_for @question do |f| %>
-    <p>
+    <div class="form-group">
       <%= f.label :question %><br>
-      <%= f.text_field :question %>
-    </p>
-    <p>
-      <%= f.submit %>
-    </p>
+      <%= f.text_field :question, :class => "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.submit :class => "btn btn-default" %>
+    </div>
 <% end %>

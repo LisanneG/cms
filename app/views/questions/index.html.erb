@@ -1,20 +1,27 @@
 <h1>Listing questions</h1>
 
-<table>
-  <tr>
-    <th>Text</th>
-  </tr>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Text</th>
+      <th>Show</th>
+      <th>Edit</th>
+      <th>Destroy</th>
+    </tr>
+  </thead>
 
+  <tbody>
   <% @questions.each do |question| %>
       <tr>
         <td><%= question.question %></td>
-        <td><%= link_to 'Show', question_path(question) %></td>
-        <td><%= link_to 'Edit', edit_question_path(question) %></td>
+        <td><%= link_to 'Show', question_path(question), :class => "btn btn-default" %></td>
+        <td><%= link_to 'Edit', edit_question_path(question), :class => "btn btn-primary" %></td>
         <td><%= link_to 'Destroy', question_path(question),
                         method: :delete,
-                        data: { confirm: 'Are you sure?' } %></td>
+                        data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
       </tr>
   <% end %>
+  </tbody>
 </table>
 
-<%= link_to 'add question', new_question_path %>
+<%= link_to 'Add question', new_question_path, :class => 'btn btn-success' %>

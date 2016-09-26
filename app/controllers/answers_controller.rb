@@ -15,7 +15,7 @@ class AnswersController < ApplicationController
 	    @answer.destroy
 
 	    redirect_to question_path(@question)
-	  end
+	end
 
 	private
 		def answer_params

@@ -13,11 +13,11 @@
           <td><%= @location.title %></td>
           <td><%= @location.text %></td>
           <td><%= @location.x %></td>
-          <td><%= @location.y %></td>
+          <td><%= @location.y %></td>          
         </tr>
     </tbody>
 </table>
 
-
+<%= link_to 'Vraag', question_answer_path(@question), :class => "btn btn-default" %>
 <%= link_to 'Edit', edit_location_path, :class => "btn btn-default" %>
 <%= link_to 'Back', locations_path, :class => "btn btn-default" %>

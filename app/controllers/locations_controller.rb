@@ -6,6 +6,7 @@ class LocationsController < ApplicationController
 
 	def show
 		@location = Location.find(params[:id])
+		@question = Question.find(params[:id])
 	end
 
 	def new
@@ -45,6 +46,6 @@ class LocationsController < ApplicationController
 
 	private
 		def location_params
-			params.require(:location).permit(:title, :text, :x, :y, :completed)
+			params.require(:location).permit(:title, :text, :x, :y, :completed , :question_id)
 		end
 end

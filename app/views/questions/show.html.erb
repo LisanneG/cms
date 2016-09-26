@@ -1,8 +1,8 @@
-<p>
+<h1 class="jumbotron">
   <%= @question.question %>
-</p>
+</h1>
 
-<h2>Answers</h2>
+<h3>Answers</h3>
 <table class="table table-hover">
   <thead>
     <th>Answer</th>
@@ -26,10 +26,8 @@
     <p>
     <%= f.label :answer %>
     <%= f.text_field :answer %>
-    </p>
-    <p>
-      <%= f.label :correct %>
-      <%= f.check_box :correct %>
+    <%= f.label :correct %>
+    <%= f.check_box :correct %>
     </p>
 
     <p>

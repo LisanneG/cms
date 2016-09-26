@@ -4,6 +4,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body{background-color: #f1f5f8;}
 .body{margin-left: 280px;}
 
 #navigation li {
@@ -26,3 +27,10 @@
 #topbar p{color:#747381; padding-top: 20px; padding-left: 58px; float:left;}
 #topbar div{float: right; padding-top:10px; padding-right: 20px;}
 #topbar div a{color:white;}
+
+/*Locations*/
+table#locations{}
+table#locations tr{background-color: #ffffff; border: none; }
+table#locations tr:hover{background-color: #f1f5f8; border-left: 3px solid #58aad9;}
+table#locations tr td{padding: 20px;}
+/*table#locations tr td.td_edit, table#locations tr td.td_destroy{float: right;}*/

@@ -1,20 +1,20 @@
 <h1>Listing locations</h1>
-<table class="table table-hover">
-	<thead>
+<table id="locations" class="table table-hover">
+	<!-- <thead>
 		<tr>
 			<th>Title</th>
 			<th>Show</th>
 			<th>Edit</th>
 			<th>Destroy</th>
 		</tr>
-	</thead>
+	</thead> -->
 	<tbody>
 		<% @locations.each do |location| %>
 			<tr>
-				<td><%= location.title %></td>
+				<td><strong><%= location.title %></strong></td>
 				<td><%= link_to 'Show', location_path(location), :class => 'btn btn-default' %></td>
-				<td><%= link_to 'Edit', edit_location_path(location), :class => 'btn btn-primary' %></td>
-				<td><%= link_to 'Destroy', location_path(location), method: :delete, data: { confirm: 'Are you sure?', swal: {text: 'By confirming this you will delete this location', type: 'warning', confirm_button_text: 'Ok'} }, :class => "btn btn-danger" %></td>
+				<td class="td_edit"><%= link_to 'Edit', edit_location_path(location), :class => 'btn btn-success' %></td>
+				<td class="td_destroy"><%= link_to 'Destroy', location_path(location), method: :delete, data: { confirm: 'Are you sure?', swal: {text: 'By confirming this you will delete this location', type: 'warning', confirm_button_text: 'Ok'} }, :class => "btn btn-danger" %></td>
 			</tr>
 		<% end %>
 	</tbody>

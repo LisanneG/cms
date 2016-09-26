@@ -14,7 +14,7 @@
 				<td><%= location.title %></td>
 				<td><%= link_to 'Show', location_path(location), :class => 'btn btn-default' %></td>
 				<td><%= link_to 'Edit', edit_location_path(location), :class => 'btn btn-primary' %></td>
-				<td><%= link_to 'Destroy', location_path(location), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
+				<td><%= link_to 'Destroy', location_path(location), method: :delete, data: { confirm: 'Are you sure?', swal: {text: 'By confirming this you will delete this location', type: 'warning', confirm_button_text: 'Ok'} }, :class => "btn btn-danger" %></td>
 			</tr>
 		<% end %>
 	</tbody>

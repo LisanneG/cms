@@ -23,7 +23,8 @@ gem 'autoprefixer-rails'
 #devise
 gem 'devise'
 #sweetalert-rails
-gem 'sweetalert-rails'
+gem 'sweetalert2', '~> 4.0', '>= 4.0.11'
+gem 'rails-sweetalert2-confirm'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

@@ -1,8 +1,22 @@
+<<<<<<< HEAD
 <h1 class="jumbotron">
   <%= @question.question %>
 </h1>
 
 <h3>Answers</h3>
+=======
+<h3 class="jumbotron">
+  <%= @question.question %>
+</h3>
+
+
+
+
+<% if @question.multiple_choice == true %>
+
+<h2>Answers</h2>
+
+>>>>>>> image-upload
 <table class="table table-hover">
   <thead>
     <th>Answer</th>
@@ -14,6 +28,7 @@
     <tr>
         <td><%= answer.answer %></td>
         <td><%= answer.correct %></td>
+        <td><%= answer.image %></td>
         <td><%= link_to 'Destroy', [answer.question, answer],
                         method: :delete,
                         data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
@@ -21,17 +36,48 @@
     <% end %>
   </tbody>
 </table>
-<h2>Add Answer</h2>
-<%= form_for([@question, @question.answers.build]) do |f| %>
-    <p>
-    <%= f.label :answer %>
-    <%= f.text_field :answer %>
-    <%= f.label :correct %>
-    <%= f.check_box :correct %>
-    </p>
+    <h2>Add Answer</h2>
+    <%= form_for([@question, @question.answers.build]) do |f| %>
+        <p>
+          <%= f.label :answer %>
+          <%= f.text_field :answer %>
+        </p>
+        <p>
+          <%= f.label :correct %>
+          <%= f.check_box :correct %>
+        </p>
+        <p>
+          <%= f.submit %>
+        </p>
 
-    <p>
-      <%= f.submit %>
-    </p>
     <% end %>
+<% end %>
+
+<% if @question.multiple_choice_image == true %>
+    <row>
+    <% @question.answers.each do |answer| %>
+      <div class="col-md-4">
+        <%= image_tag answer.picture_url(:thumb).to_s %>
+      </div>
+    <% end %>
+    </row>
+    <h2>Add Answer</h2>
+    <%= form_for([@question, @question.answers.build]) do |f| %>
+        <p>
+          <%= f.file_field :picture %>
+        </p>
+        <p>
+          <%= f.label :correct %>
+          <%= f.check_box :correct %>
+        </p>
+        <p>
+          <%= f.submit %>
+        </p>
+    <% end %>
+<% end %>
+
+<% if @question.open == true %>
+    Dit is een open vraag
+<% end %>
+
 <%= link_to 'back', questions_path, :class => "btn btn-default" %>

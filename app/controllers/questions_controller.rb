@@ -46,6 +46,6 @@ class QuestionsController < ApplicationController
   private
 
     def question_params
-      params.require(:question).permit(:question)
+      params.require(:question).permit(:question, :multiple_choice, :multiple_choice_image, :open)
     end
 end

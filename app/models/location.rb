@@ -4,4 +4,5 @@ class Location < ApplicationRecord
 	validates :text, presence: true
 	validates :x, presence: true
 	validates :y, presence: true
+	mount_uploader :image, LocationUploader
 end

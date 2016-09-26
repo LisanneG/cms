@@ -8,6 +8,9 @@
       <%= @location.text %>
     </p>
   </div>
+  <div class="col-md-4">
+    <%= image_tag @location.image_url(:thumb).to_s %>
+  </div>
   <div class="col-md-4 jumbotron">
     <h3>locatie</h3>
     <p>
@@ -21,7 +24,7 @@
     </p>
   </div>
 </row>
-
+<br>
 <row>
   <div class="col-md-6">
     <h3><%= @question.question %></h3>
@@ -29,7 +32,8 @@
     <%= link_to 'Back', locations_path, :class => "btn btn-default" %>
   </div>
 
-  <div class="col-md-6">
+  <div class="col-md-8">
+<% if @question.multiple_choice == true %>
     <table class="table table-hover">
       <thead>
       <tr>
@@ -46,10 +50,25 @@
         <% end %>
       </tbody>
     </table>
+<% end %>
+
+<% if @question.multiple_choice_image == true %>
+  <row>
+    <% @question.answers.each do |answer| %>
+      <div class="col-md-4">
+        <%= image_tag answer.picture_url(:thumb).to_s %>
+      </div>
+    <% end %>
+  </row>
+<% end %>
+
+<% if @question.open == true %>
+    Dit is een Open Vraag
+<% end %>
     <%= link_to 'Edit Question', question_path(@question), :class => "btn btn-default" %>
   </div>
 </row>
-
+<br>
 <row>
 
 

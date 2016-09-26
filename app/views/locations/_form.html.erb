@@ -32,9 +32,13 @@
     <%= f.text_area :y, :class => "form-control" %>
   </div>
 
-    <div class="form-group">
-      <%= f.collection_select :question_id, Question.all, :id, :question %>
-    </div>
+  <div>
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="form-group">
+    <%= f.collection_select :question_id, Question.all, :id, :question %>
+  </div>
  
   <p>
     <%= f.submit :class => "btn btn-success" %>

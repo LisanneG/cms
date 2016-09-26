@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160923092742) do
+ActiveRecord::Schema.define(version: 20160926132749) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20160923092742) do
     t.boolean  "correct"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "picture"
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
@@ -47,12 +48,16 @@ ActiveRecord::Schema.define(version: 20160923092742) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "question_id"
+    t.string   "image"
   end
 
   create_table "questions", force: :cascade do |t|
     t.string   "question"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.boolean  "multiple_choice"
+    t.boolean  "multiple_choice_image"
+    t.boolean  "open"
   end
 
 end

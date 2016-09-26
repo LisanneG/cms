@@ -1,6 +1,10 @@
+/*
+ *= require_self
+ *= require sweetalert
+ *= require_tree .
+ */
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
 
 #navigation li {
   display: inline;

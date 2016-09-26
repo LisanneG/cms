@@ -9,7 +9,25 @@
   </head>
 
   <body>
-  <div class="container">
+    <div id="navigation">
+      <div id="schoolclash_text"><a href="/"><img src="/images/schoolclash.png"></a></div>
+        <% if not admin_signed_in? %>
+        <div class="disabled">
+        <% end %>
+          <ul>
+            <li class="active"><img src="/images/home1.png"><%= link_to 'Locations', locations_path, :class => 'btn' %></li>
+            <li><img src="/images/vragen.png"><%= link_to 'Questions', questions_path, :class => 'btn' %></li>
+            <li><img src="/images/gebruikers1.png"><%= link_to 'Add Admin', new_admin_registration_path, :class => 'btn' %></li>            
+          </ul>
+      <% if not admin_signed_in? %>
+        </div>
+      <% end %>
+      </div>
+    <div id="topbar">
+      <p>test</p>
+      <div><img src="/images/logout.png"><%= link_to('Logout', destroy_admin_session_path, :method => :delete, :class => 'btn') %></div>
+    </div>
+  <div class="container body">
   <br>
   <% if notice != nil %>
   <p class="notice alert alert-success"><%= notice %></p>
@@ -17,19 +35,6 @@
   <% if alert != nil %>
   <p class="alert alert-danger"><%= alert %></p>
   <% end %>
-    <div id="navigation">
-      <% if admin_signed_in? %>
-        <ul>
-          <li><%= link_to 'Locations', locations_path, :class => 'btn btn-primary' %></li>
-          <li><%= link_to 'Questions', questions_path, :class => 'btn btn-primary' %></li>
-          <li><%= link_to 'Add Admin', new_admin_registration_path, :class => 'btn btn-primary' %></li>
-          <li><%= link_to('Logout', destroy_admin_session_path, :method => :delete, :class => 'btn btn-primary') %></li>
-        </ul>
-    <% end %>
-    </div>
-
-
-
     <%= yield %>
   </div>
   </body>

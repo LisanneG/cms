@@ -6,7 +6,8 @@ class LocationsController < ApplicationController
 
 	def show
 		@location = Location.find(params[:id])
-		@question = Question.find(params[:id])
+		@question_id = @location.question_id
+		@question = Question.find(@question_id)
 	end
 
 	def new

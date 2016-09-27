@@ -4,12 +4,16 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+<<<<<<< HEAD
 body{background-color: #f1f5f8;}
 .body{margin-left: 280px;}
 
+=======
+>>>>>>> master
 #navigation li {
-  /*display: inline;*/
+  display: inline;
   list-style-type: none;
+<<<<<<< HEAD
 }
 #navigation{background-color: #4f4e5c; position: fixed; top: 0; left: 0; width: 260px; z-index: 1; overflow-x: hidden; height: 100%;}
 #navigation ul{margin-left: -40px !important;}
@@ -34,3 +38,6 @@ table#locations tr{background-color: #ffffff; border: none; }
 table#locations tr:hover{background-color: #f1f5f8; border-left: 3px solid #58aad9;}
 table#locations tr td{padding: 20px;}
 /*table#locations tr td.td_edit, table#locations tr td.td_destroy{float: right;}*/
+=======
+}
+>>>>>>> master

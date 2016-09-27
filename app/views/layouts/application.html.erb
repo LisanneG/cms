@@ -17,6 +17,7 @@
  <ul>
    <li class="active"><%= image_tag ("home1.png") %><%= link_to 'Locations', locations_path, :class => 'btn' %></li>
    <li><%= image_tag ("vragen.png") %><%= link_to 'Questions', questions_path, :class => 'btn' %></li>
+   <li><%= link_to 'Groups', groups_path, :class => 'btn'  %></li>
  </ul>
  <% if not admin_signed_in? %>
      </div>

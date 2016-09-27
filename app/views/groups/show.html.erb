@@ -1,0 +1,53 @@
+<row>
+  <div class="col-md-8">
+    <h2>
+      <strong>
+        <%= @group.group %>
+      </strong>
+    </h2>
+  </div>
+
+  <div class="col-md-4">
+    <h2>
+      ID:
+      <strong><%= @group.key %> </strong>
+    </h2>
+  </div>
+</row>
+
+<row>
+  <div class="col-md-8">
+    <h3>Students</h3>
+      <table class="table table-hover">
+        <thead>
+        <th>Name</th>
+        <th>#</th>
+        </thead>
+        <tbody>
+        <% @group.students.each do |student| %>
+            <tr>
+              <td><%= student.name %></td>
+              <td><%= link_to 'Destroy', [student.group, student],
+                              method: :delete,
+                              data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+  </div>
+  <div class="col-md-4">
+    <h3>Add Student</h3>
+    <%= form_for ([@group, @group.students.build]) do |f| %>
+      <p>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </p>
+      <p>
+        <%= f.submit %>
+      </p>
+    <% end %>
+  </div>
+</row>
+<row>
+<%= link_to 'Back', groups_path, :class => 'btn btn-default' %>
+</row>

@@ -5,5 +5,8 @@ Rails.application.routes.draw do
   resources :questions do
     resources :answers
   end
+  resources :groups do
+    resources :students
+  end
   root 'locations#index'
 end

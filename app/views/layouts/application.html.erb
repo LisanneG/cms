@@ -1,41 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Cms</title>
-  <%= csrf_meta_tags %>
+ <title>Cms</title>
+ <%= csrf_meta_tags %>
 
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+ <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+ <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
 <body>
 <div id="navigation">
-  <div id="schoolclash_text"><a href="/"><%= image_tag("schoolclash") %></a></div>
-  <% if not admin_signed_in? %>
-      <div class="disabled">
-  <% end %>
-  <ul>
-    <li class="active"><%= image_tag("home1") %><%= link_to 'Locations', locations_path, :class => 'btn' %></li>
-    <li><%= image_tag("vragen") %><%= link_to 'Questions', questions_path, :class => 'btn' %></li>
-    <li><%= image_tag("gebruikers1") %><%= link_to 'Add Admin', new_admin_registration_path, :class => 'btn' %></li>
-  </ul>
-  <% if not admin_signed_in? %>
-      </div>
-  <% end %>
+ <div id="schoolclash_text"><a href="/"><%= image_tag ("schoolclash.png") %></a></div>
+ <% if not admin_signed_in? %>
+     <div class="disabled">
+ <% end %>
+ <ul>
+   <li class="active"><%= image_tag ("home1.png") %><%= link_to 'Locations', locations_path, :class => 'btn' %></li>
+   <li><%= image_tag ("vragen.png") %><%= link_to 'Questions', questions_path, :class => 'btn' %></li>
+ </ul>
+ <% if not admin_signed_in? %>
+     </div>
+ <% end %>
 </div>
 <div id="topbar">
-  <p>test</p>
-  <div><%= image_tag("logout") %><%= link_to('Logout', destroy_admin_session_path, :method => :delete, :class => 'btn') %></div>
+ <p>test</p>
+ <div><%= image_tag ("logout.png") %><%= link_to('Logout', destroy_admin_session_path, :method => :delete, :class => 'btn') %></div>
 </div>
 <div class="container body">
-  <br>
-  <% if notice != nil %>
-      <p class="notice alert alert-success"><%= notice %></p>
-  <% end %>
-  <% if alert != nil %>
-      <p class="alert alert-danger"><%= alert %></p>
-  <% end %>
-  <%= yield %>
+ <br>
+ <% if notice != nil %>
+     <p class="notice alert alert-success"><%= notice %></p>
+ <% end %>
+ <% if alert != nil %>
+     <p class="alert alert-danger"><%= alert %></p>
+ <% end %>
+ <%= yield %>
 </div>
 </body>
 </html>

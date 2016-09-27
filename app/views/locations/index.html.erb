@@ -1,4 +1,4 @@
-<h1>Listing locations</h1>
+<%= link_to 'Add a new location', new_location_path, :class => 'btn btn-info location_btn' %>
 <table id="locations" class="table table-hover">
 	<!-- <thead>
 		<tr>
@@ -11,12 +11,9 @@
 	<tbody>
 		<% @locations.each do |location| %>
 			<tr>
-				<td><strong><%= location.title %></strong></td>
-				<td><%= link_to 'Show', location_path(location), :class => 'btn btn-default' %></td>
-				<td class="td_destroy"><%= link_to 'Edit', edit_location_path(location), :class => 'btn btn-success' %><%= link_to image_tag("destroy"), location_path(location), method: :delete, data: { confirm: 'Are you sure?', swal: {text: 'By confirming this you will delete this location', type: 'warning', confirm_button_text: 'Ok'} }, :class => "btn btn-danger" %></td>
+				<td class="l_title"><strong><%= location.title %></strong></td>
+				<td class="td_destroy"><%= link_to 'Show', location_path(location), :class => 'btn btn-default' %><%= link_to 'Edit', edit_location_path(location), :class => 'btn btn-success btn-middle' %><%= link_to image_tag("destroy"), location_path(location), method: :delete, data: { confirm: 'Are you sure?', swal: {text: 'By confirming this you will delete this location', type: 'warning', confirm_button_text: 'Ok'} }, :class => "btn btn-danger" %></td>
 			</tr>
 		<% end %>
 	</tbody>
 </table>
-
-<%= link_to 'New location', new_location_path, :class => 'btn btn-success' %>

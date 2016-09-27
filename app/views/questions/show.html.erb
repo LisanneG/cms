@@ -54,6 +54,13 @@
     <% @question.answers.each do |answer| %>
       <div class="col-md-4">
         <%= image_tag answer.picture_url(:thumb).to_s %>
+
+          <% if answer.correct? %>
+            <p>Correct</p>
+          <% else %>
+            <br>
+          <% end %>
+
         <%= link_to 'Destroy', [answer.question, answer],
                         method: :delete,
                         data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
@@ -79,7 +86,8 @@
 <% end %>
 
 <% if @question.open == true %>
-    Dit is een open vraag
+    Dit is een open vraag<br>
+    <%= link_to 'back', questions_path, :class => "btn btn-default" %>
 <% end %>
 
 

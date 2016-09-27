@@ -39,3 +39,4 @@ user.email = "test@mail.com"
 user.password = "standardpassword"
 user.password_confirmation = "standardpassword"
 user.save!
+

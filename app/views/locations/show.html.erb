@@ -38,15 +38,19 @@
       <thead>
       <tr>
         <th>Answer</th>
-        <th>Correct</th>
       </tr>
       </thead>
       <tbody>
         <% @question.answers.each do |answer| %>
+          <% if answer.correct? %>
+          <tr class="success">
+            <td><%= answer.answer %></td>
+          </tr>
+          <% else %>
           <tr>
             <td><%= answer.answer %></td>
-            <td><%= answer.correct %></td>
           </tr>
+          <% end %>
         <% end %>
       </tbody>
     </table>

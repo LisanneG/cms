@@ -4,8 +4,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/*General*/
 body{background-color: #f1f5f8;}
 .body{margin-left: 280px;}
+.btn{border-radius: 2px;}
+
+.flex{display: flex; justify-content: space-between;} /*Putting blocks next to eachother*/
 
 #navigation li {
   /*display: inline;*/
@@ -33,4 +37,19 @@ table#locations{}
 table#locations tr{background-color: #ffffff; border: none; }
 table#locations tr:hover{background-color: #f1f5f8; border-left: 3px solid #58aad9;}
 table#locations tr td{padding: 20px;}
+table#locations .td_destroy {text-align: right;}
+table#locations .td_destroy a.btn-middle{margin-right: 10px; margin-left: 10px;}
+table#locations .l_title{font-size: 20px;}
+.location_btn{margin-bottom: 22px;}
+
+/*new location*/
+.block{background-color: white; border: 1px solid #ccc; border-radius: 5px; padding: 10px; width: 360px; margin-bottom: 20px;}
+.btns{height: 50px;}
+.btns input{height: 31px;}
+.flex .title{width: 66%;}
+.flex .title input{padding: 24px; font-size: 20px;}
+.flex .title textarea{height: 350px; margin-top: 20px;}
+.link-back{color: #ea647c; text-decoration: none; margin-right: 139px; font-weight: bold; margin-left: 10px;}
+.link-back:hover{color: darkred;}
+.flex textarea{resize: none;}
 /*table#locations tr td.td_edit, table#locations tr td.td_destroy{float: right;}*/

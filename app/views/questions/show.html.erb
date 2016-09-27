@@ -53,7 +53,7 @@
     <row>
     <% @question.answers.each do |answer| %>
       <div class="col-md-4">
-        <%= image_tag answer.picture_url(:thumb).to_s %>
+        <%= image_tag answer.picture_url.to_s, size: "300" %>
 
           <% if answer.correct? %>
             <p>Correct</p>
@@ -67,7 +67,8 @@
       </div>
     <% end %>
     </row>
-    <div class="jumbotron col-md-8">
+    <br>
+    <div class="jumbotron col-md-12">
       <h2>Add Answer</h2>
       <%= form_for([@question, @question.answers.build]) do |f| %>
           <p>

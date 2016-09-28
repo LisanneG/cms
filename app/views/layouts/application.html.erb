@@ -15,16 +15,16 @@
      <div class="disabled">
  <% end %>
  <ul>
-   <li class="<%= 'active' if current_page?(locations_path) %>"><%= image_tag ("home1.png") %><%= link_to 'Locations', locations_path, :class => 'btn' %></li>
-   <li class="<%= 'active' if current_page?(questions_path) %>"><%= image_tag ("vragen.png") %><%= link_to 'Questions', questions_path, :class => 'btn' %></li>
-   <li class="<%= 'active' if current_page?(groups_path) %>"><%= image_tag ("gebruikers1.png") %><%= link_to 'Groups', groups_path, :class => 'btn'  %></li>
+   <li class="<%= 'active' if params[:controller] == 'locations' %>"><%= image_tag ("home1.png") %><%= link_to 'Locations', locations_path, :class => 'btn' %></li>
+   <li class="<%= 'active' if params[:controller] == 'questions' %>"><%= image_tag ("vragen.png") %><%= link_to 'Questions', questions_path, :class => 'btn' %></li>
+   <li class="<%= 'active' if params[:controller] == 'groups' %>"><%= image_tag ("gebruikers1.png") %><%= link_to 'Groups', groups_path, :class => 'btn'  %></li>
  </ul>
  <% if not admin_signed_in? %>
      </div>
  <% end %>
 </div>
 <div id="topbar">
- <p><strong><%= yield(:title) %></strong></p>
+ <p><strong><%= params[:controller].capitalize %></strong></p>
  <div><%= image_tag ("logout.png") %><%= link_to('Logout', destroy_admin_session_path, :method => :delete, :class => 'btn') %></div>
 </div>
 <div class="container body">

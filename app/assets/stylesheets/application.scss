@@ -34,7 +34,7 @@ body{background-color: #f1f5f8;}
 
 /*Locations*/
 table#locations{}
-table#locations tr{background-color: #ffffff; border: none; }
+table#locations tr{background-color: #ffffff; border: none;}
 table#locations tr:hover{background-color: #f1f5f8; border-left: 3px solid #58aad9;}
 table#locations tr td{padding: 20px;}
 table#locations .td_destroy {text-align: right;}
@@ -63,5 +63,6 @@ table#locations .l_title{font-size: 20px;}
 @media (max-width: 991px) {
 	.bigscreen{display: none;}
 	.smallscreen{display: block; margin-top: 20px;}
+	.smallscreen input{float: right;}
 	.coordinates{margin-left: 14px;}	
 }

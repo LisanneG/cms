@@ -1,13 +1,27 @@
-<h3 class="jumbotron">
-  <%= @question.question %>
-</h3>
-
-
-
-
 <% if @question.multiple_choice == true %>
+<h1>Question with multiple choice</h1>
+<div class="row">
+  <div class="col-md-7 title block">
+    <%= @question.question %>
+  </div>
+  <%= form_for([@question, @question.answers.build]) do |f| %>
+    <div class="col-md-4 btns block bigscreen col-md-offset-1">
+      <%= link_to 'Cancle', questions_path, :class => "link-back" %>    
+      <%= f.submit "Create answer", :class => "btn btn-success" %>      
+    </div>
+  </div>
 
-<h2>Answers</h2>
+  <div class="row">
+    <div class="col-md-7 create_answer block">
+      <%= f.label :answer %>
+      <%= f.text_field :answer %>
+      <br>
+      <%= f.label :correct %>
+      <%= f.check_box :correct %>
+    </div>
+
+  </div>
+  <% end %>
 
 <table class="table table-hover">
   <thead>
@@ -29,24 +43,6 @@
     <% end %>
   </tbody>
 </table>
-  <div class="jumbotron col-md-8">
-    <h2>Add Answer</h2>
-    <%= form_for([@question, @question.answers.build]) do |f| %>
-        <p>
-          <%= f.label :answer %>
-          <%= f.text_field :answer %>
-        </p>
-        <p>
-          <%= f.label :correct %>
-          <%= f.check_box :correct %>
-        </p>
-        <p>
-          <%= f.submit %>
-        </p>
-
-    <% end %>
-    <%= link_to 'back', questions_path, :class => "btn btn-default" %>
-  </div>
 <% end %>
 
 <% if @question.multiple_choice_image == true %>

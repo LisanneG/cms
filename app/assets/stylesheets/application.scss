@@ -38,7 +38,7 @@ table#locations .l_title, table#questions .l_title{font-size: 20px;}
 
 /*new location*/
 .block{background-color: white; border: 1px solid #ccc; border-radius: 5px; padding: 10px;}
-.row .title input{font-size: 20px; height: 56px; margin-bottom: 20px;}
+.row .title input, .row .title{font-size: 20px; height: 56px; margin-bottom: 20px;}
 .row .description_text textarea{height: 350px; margin-bottom: 20px;}
 .link-back{color: #ea647c; text-decoration: none; font-weight: bold; margin-left: 10px; line-height: 34px;}
 .link-back:hover{color: darkred;}
@@ -53,10 +53,15 @@ table#locations .l_title, table#questions .l_title{font-size: 20px;}
 /*questions*/
 #addQuestion .modal-header, #addQuestion .modal-footer{border: none;}
 #addQuestion .modal-title, #addQuestion .modal-footer, #addQuestion .col-xs-4{text-align: center;}
-#addQuestion p{color: #58aad9; font-weight: bold; margin-top: 10px;}
+#addQuestion label{color: #58aad9; font-weight: bold; margin-top: 10px;}
 #addQuestion .modal-header{margin-top: 30px;}
 #addQuestion .modal-footer{margin-bottom: 30px;}
-#addQuestion .modal-body{padding-top: 30px; padding-bottom: 60px;}
+#addQuestion .modal-body{padding-bottom: 60px; text-align: center;}
+#addQuestion .modal-body input{border-radius: 5px; width: 70%;}
+#addQuestion .row{margin-top: 30px;}
+
+/*editing multiple choice*/
+.row .create_answer input[type=text]{float: right; width: 70%; border-radius: 5px;}
 
 @media (min-width: 992px) {
 	.bigscreen{display: block;}

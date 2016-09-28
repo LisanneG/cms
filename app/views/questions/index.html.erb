@@ -11,33 +11,41 @@
   </tbody>
 </table>
 
+<%= form_for @question do |f| %>
 <div id="addQuestion" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">What for question type do you want to add?</h4>
+        <h4 class="modal-title">What for question do you want to add?</h4>
       </div>
       <div class="modal-body">
+        <%= f.label :question %>
+        <%= f.text_field :question %>
         <div class="row">
           <div class="col-xs-4">
-            <%= image_tag ("ico-simple.jpg") %>
-            <p>Open question</p>
+            <%= image_tag ("ico-simple.jpg") %><br>
+            <%= f.label :Open_question %>
+            <%= f.check_box :open %>
           </div>
           <div class="col-xs-4">
-            <%= image_tag ("ico-image.jpg") %>
-            <p>Question with an image</p>
+            <%= image_tag ("ico-image.jpg") %><br>
+            <%= f.label :Question_with_an_image %>
+            <%= f.check_box :multiple_choice_image %>
           </div>
-          <div class="col-xs-4">
-            <%= image_tag ("ico-multiple.jpg") %>
-            <p>Multiple choice</p>
+          <div class="col-xs-4">            
+            <%= image_tag ("ico-multiple.jpg") %><br>
+            <%= f.label :Multiple_choice%>
+            <%= f.check_box :multiple_choice %>
           </div>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-info" data-dismiss="modal">Create question</button>
+        <%= f.submit :class => "btn btn-info" %>
+        <!-- <button type="button" class="btn btn-info" data-dismiss="modal">Create question</button> -->
       </div>
     </div>
 
   </div>
 </div>
+<% end %>

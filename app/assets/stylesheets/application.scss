@@ -30,7 +30,7 @@ body{background-color: #f1f5f8;}
 
 /*Locations and questions*/
 table#locations{}
-table#locations tr, table#questions tr, table#answers tr, table#groups tr, table#students tr{background-color: #ffffff; border: none;}
+table#locations tr, table#questions tr, table#answers tr, table#groups tr, table#students tr{background-color: #ffffff; border: none;border-left: 3px solid white;}
 table#locations tr:hover, table#questions tr:hover, table#answers tbody tr:hover, table#groups tr:hover, table#students tbody tr:hover{background-color: #f1f5f8; border-left: 3px solid #58aad9;}
 table#locations tr td, table#questions tr td, table#answers tr td, table#groups tr td, table#students tr td{padding: 20px;}
 table#locations .td_destroy, table#questions .td_destroy, table#answers .td_destroy, table#groups .td_destroy, table#students .td_destroy{text-align: right;}

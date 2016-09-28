@@ -9,17 +9,11 @@ body{background-color: #f1f5f8;}
 .body{margin-left: 280px;}
 .btn{border-radius: 2px;}
 
-/*.flex{display: flex; justify-content: space-between;}*/
-
-#navigation li {
-  /*display: inline;*/
-  list-style-type: none;
-}
 #navigation{background-color: #4f4e5c; position: fixed; top: 0; left: 0; width: 260px; z-index: 1; overflow-x: hidden; height: 100%;}
 #navigation ul{margin-left: -40px !important;}
 #navigation li.active, #navigation li:hover{background-color: #469695;}
 #navigation li.active a, #navigation li:hover a{color: white;}
-#navigation li{padding: 10px;}
+#navigation li{padding: 10px; list-style-type: none;}
 #navigation .btn{color: #747381;}
 
 #navigation .disabled a{pointer-events: none; cursor: not-allowed;}
@@ -32,14 +26,14 @@ body{background-color: #f1f5f8;}
 #topbar div{float: right; padding-top:10px; padding-right: 20px;}
 #topbar div a{color:white;}
 
-/*Locations*/
+/*Locations and questions*/
 table#locations{}
-table#locations tr{background-color: #ffffff; border: none;}
-table#locations tr:hover{background-color: #f1f5f8; border-left: 3px solid #58aad9;}
-table#locations tr td{padding: 20px;}
-table#locations .td_destroy {text-align: right;}
-table#locations .td_destroy a.btn-middle{margin-right: 10px; margin-left: 10px;}
-table#locations .l_title{font-size: 20px;}
+table#locations tr, table#questions tr{background-color: #ffffff; border: none;}
+table#locations tr:hover, table#questions tr:hover{background-color: #f1f5f8; border-left: 3px solid #58aad9;}
+table#locations tr td, table#questions tr td{padding: 20px;}
+table#locations .td_destroy, table#questions .td_destroy {text-align: right;}
+table#locations .td_destroy a.btn-middle, table#questions .td_destroy a.btn-middle{margin-right: 10px; margin-left: 10px;}
+table#locations .l_title, table#questions .l_title{font-size: 20px;}
 .location_btn{margin-bottom: 22px;}
 
 /*new location*/
@@ -56,6 +50,14 @@ table#locations .l_title{font-size: 20px;}
 .coordinates .label_xy{line-height: 49px;}
 .coordinates .location_image{float: right; margin-top: 13px; width: 258px;}
 
+/*questions*/
+#addQuestion .modal-header, #addQuestion .modal-footer{border: none;}
+#addQuestion .modal-title, #addQuestion .modal-footer, #addQuestion .col-xs-4{text-align: center;}
+#addQuestion p{color: #58aad9; font-weight: bold; margin-top: 10px;}
+#addQuestion .modal-header{margin-top: 30px;}
+#addQuestion .modal-footer{margin-bottom: 30px;}
+#addQuestion .modal-body{padding-top: 30px; padding-bottom: 60px;}
+
 @media (min-width: 992px) {
 	.bigscreen{display: block;}
 	.smallscreen{display: none;}
@@ -65,4 +67,7 @@ table#locations .l_title{font-size: 20px;}
 	.smallscreen{display: block; margin-top: 20px;}
 	.smallscreen input{float: right;}
 	.coordinates{margin-left: 14px;}	
+}
+@media (min-width: 768px) {
+#addQuestion .modal-dialog {width: 900px;}
 }

@@ -53,19 +53,25 @@ table#locations .l_title, table#questions .l_title{font-size: 20px;}
 /*questions*/
 #addQuestion .modal-header, #addQuestion .modal-footer{border: none;}
 #addQuestion .modal-title, #addQuestion .modal-footer, #addQuestion .col-xs-4{text-align: center;}
-#addQuestion label{color: #58aad9; font-weight: bold; margin-top: 10px;}
+#addQuestion label, .question_icon label{color: #58aad9; font-weight: bold; margin-top: 10px;}
 #addQuestion .modal-header{margin-top: 30px;}
 #addQuestion .modal-footer{margin-bottom: 30px;}
 #addQuestion .modal-body{padding-bottom: 60px; text-align: center;}
 #addQuestion .modal-body input{border-radius: 5px; width: 70%;}
 #addQuestion .row{margin-top: 30px;}
+/*question edit*/
+.question_icon .col-md-4{text-align: center;}
+.question_icon .col-md-8{margin-left: 15px;}
+.row .title_question input{border-radius: 5px; border: 1px solid #ccc; box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); width: 100%; padding: 10px;}
 
 /*editing multiple choice*/
 .row .create_answer input[type=text]{float: right; width: 70%; border-radius: 5px;}
 
+
 @media (min-width: 992px) {
 	.bigscreen{display: block;}
 	.smallscreen{display: none;}
+	.question_icon .col-md-8{width: 64.1%;}
 }
 @media (max-width: 991px) {
 	.bigscreen{display: none;}
@@ -74,5 +80,5 @@ table#locations .l_title, table#questions .l_title{font-size: 20px;}
 	.coordinates{margin-left: 14px;}	
 }
 @media (min-width: 768px) {
-#addQuestion .modal-dialog {width: 900px;}
+	#addQuestion .modal-dialog {width: 900px;}
 }

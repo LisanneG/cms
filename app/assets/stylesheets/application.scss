@@ -10,17 +10,11 @@ body{background-color: #f1f5f8;}
 .body{margin-left: 280px;}
 .btn{border-radius: 2px;}
 
-/*.flex{display: flex; justify-content: space-between;}*/
-
-#navigation li {
-  /*display: inline;*/
-  list-style-type: none;
-}
 #navigation{background-color: #4f4e5c; position: fixed; top: 0; left: 0; width: 260px; z-index: 1; overflow-x: hidden; height: 100%;}
 #navigation ul{margin-left: -40px !important;}
 #navigation li.active, #navigation li:hover{background-color: #469695;}
 #navigation li.active a, #navigation li:hover a{color: white;}
-#navigation li{padding: 10px;}
+#navigation li{padding: 10px; list-style-type: none;}
 #navigation .btn{color: #747381;}
 
 #navigation .disabled a{pointer-events: none; cursor: not-allowed;}
@@ -33,24 +27,53 @@ body{background-color: #f1f5f8;}
 #topbar div{float: right; padding-top:10px; padding-right: 20px;}
 #topbar div a{color:white;}
 
-/*Locations*/
+/*Locations and questions*/
 table#locations{}
-table#locations tr{background-color: #ffffff; border: none; }
-table#locations tr:hover{background-color: #f1f5f8; border-left: 3px solid #58aad9;}
-table#locations tr td{padding: 20px;}
-table#locations .td_destroy {text-align: right;}
-table#locations .td_destroy a.btn-middle{margin-right: 10px; margin-left: 10px;}
-table#locations .l_title{font-size: 20px;}
+table#locations tr, table#questions tr{background-color: #ffffff; border: none;}
+table#locations tr:hover, table#questions tr:hover{background-color: #f1f5f8; border-left: 3px solid #58aad9;}
+table#locations tr td, table#questions tr td{padding: 20px;}
+table#locations .td_destroy, table#questions .td_destroy {text-align: right;}
+table#locations .td_destroy a.btn-middle, table#questions .td_destroy a.btn-middle{margin-right: 10px; margin-left: 10px;}
+table#locations .l_title, table#questions .l_title{font-size: 20px;}
 .location_btn{margin-bottom: 22px;}
 
 /*new location*/
-.block{background-color: white; border: 1px solid #ccc; border-radius: 5px; padding: 10px; margin-bottom: 20px;}
-.row .title input{padding: 24px; font-size: 20px; height: 56px;}
-.row .description_text textarea{height: 350px;}
+.block{background-color: white; border: 1px solid #ccc; border-radius: 5px; padding: 10px;}
+.row .title input, .row .title{font-size: 20px; height: 56px; margin-bottom: 20px;}
+.row .description_text textarea{height: 350px; margin-bottom: 20px;}
 .link-back{color: #ea647c; text-decoration: none; font-weight: bold; margin-left: 10px; line-height: 34px;}
 .link-back:hover{color: darkred;}
 .row textarea{resize: none;}
 .btns input[type=submit]{float:right;}
-.coordinates textarea{border-radius: 5px; float: right; width: 70%;}
-.coordinates select{float: right;}
+.coordinates textarea, .coordinates select{border-radius: 5px; float: right; width: 70%; height: 50px;}
+.coordinates select{height: 40px; margin-top: 5px;}
+.coordinates #location_y{margin-top: 3px;}
 .coordinates .label_xy{line-height: 49px;}
+.coordinates .location_image{float: right; margin-top: 13px; width: 258px;}
+
+/*questions*/
+#addQuestion .modal-header, #addQuestion .modal-footer{border: none;}
+#addQuestion .modal-title, #addQuestion .modal-footer, #addQuestion .col-xs-4{text-align: center;}
+#addQuestion label{color: #58aad9; font-weight: bold; margin-top: 10px;}
+#addQuestion .modal-header{margin-top: 30px;}
+#addQuestion .modal-footer{margin-bottom: 30px;}
+#addQuestion .modal-body{padding-bottom: 60px; text-align: center;}
+#addQuestion .modal-body input{border-radius: 5px; width: 70%;}
+#addQuestion .row{margin-top: 30px;}
+
+/*editing multiple choice*/
+.row .create_answer input[type=text]{float: right; width: 70%; border-radius: 5px;}
+
+@media (min-width: 992px) {
+	.bigscreen{display: block;}
+	.smallscreen{display: none;}
+}
+@media (max-width: 991px) {
+	.bigscreen{display: none;}
+	.smallscreen{display: block; margin-top: 20px;}
+	.smallscreen input{float: right;}
+	.coordinates{margin-left: 14px;}	
+}
+@media (min-width: 768px) {
+#addQuestion .modal-dialog {width: 900px;}
+}

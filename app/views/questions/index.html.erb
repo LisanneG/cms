@@ -1,27 +1,51 @@
-<h1>Listing questions</h1>
-
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th>Text</th>
-      <th>Show</th>
-      <th>Edit</th>
-      <th>Destroy</th>
-    </tr>
-  </thead>
-
+<%#= link_to 'Add a new question', new_question_path, :class => 'btn btn-info location_btn' %>
+<button type="button" class="btn btn-info location_btn" data-toggle="modal" data-target="#addQuestion">Add a new question</button>
+<table id="questions" class="table table-hover">
   <tbody>
   <% @questions.each do |question| %>
       <tr>
-        <td><%= question.question %></td>
-        <td><%= link_to 'To Answers', question_path(question), :class => "btn btn-default" %></td>
-        <td><%= link_to 'Edit', edit_question_path(question), :class => "btn btn-primary" %></td>
-        <td><%= link_to 'Destroy', question_path(question),
-                        method: :delete,
-                        data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
+        <td class="l_title"><strong><%= question.question %></strong></td>
+        <td class="td_destroy"><%= link_to 'To Answers', question_path(question), :class => "btn btn-default" %><%= link_to 'Edit', edit_question_path(question), :class => "btn btn-success btn-middle" %><%= link_to image_tag("destroy"), question_path(question), method: :delete, data: { confirm: 'Are you sure?', swal: {text: 'By confirming this you will delete this question', type: 'warning', confirm_button_text: 'Ok'} }, :class => "btn btn-danger" %></td>
       </tr>
   <% end %>
   </tbody>
 </table>
 
-<%= link_to 'Add question', new_question_path, :class => 'btn btn-success' %>
+<%= form_for @question do |f| %>
+<div id="addQuestion" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">What for question do you want to add?</h4>
+      </div>
+      <div class="modal-body">
+        <%= f.label :question %>
+        <%= f.text_field :question %>
+        <div class="row">
+          <div class="col-xs-4">
+            <%= image_tag ("ico-simple.jpg") %><br>
+            <%= f.label :Open_question %>
+            <%= f.check_box :open %>
+          </div>
+          <div class="col-xs-4">
+            <%= image_tag ("ico-image.jpg") %><br>
+            <%= f.label :Question_with_an_image %>
+            <%= f.check_box :multiple_choice_image %>
+          </div>
+          <div class="col-xs-4">            
+            <%= image_tag ("ico-multiple.jpg") %><br>
+            <%= f.label :Multiple_choice%>
+            <%= f.check_box :multiple_choice %>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <%= f.submit :class => "btn btn-info" %>
+        <!-- <button type="button" class="btn btn-info" data-dismiss="modal">Create question</button> -->
+      </div>
+    </div>
+
+  </div>
+</div>
+<% end %>

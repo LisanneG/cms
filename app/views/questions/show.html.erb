@@ -28,14 +28,12 @@
     <th>Answer</th>
     <th>Correct</th>
     <th>#</th>
-    <th>#</th>
   </thead>
   <tbody>
     <% @question.answers.each do |answer| %>
     <tr>
         <td><%= answer.answer %></td>
         <td><%= answer.correct %></td>
-        <td><%= answer.picture %></td>
         <td><%= link_to 'Destroy', [answer.question, answer],
                         method: :delete,
                         data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>

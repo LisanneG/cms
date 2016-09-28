@@ -1,11 +1,19 @@
 <%#= link_to 'Add a new question', new_question_path, :class => 'btn btn-info location_btn' %>
 <button type="button" class="btn btn-info location_btn" data-toggle="modal" data-target="#addQuestion">Add a new question</button>
 <table id="questions" class="table table-hover">
+  <thead>
+    <th>Question</th>
+    <th>Buttons</th>
+    <th></th>
+    <th></th>
+  </thead>
   <tbody>
   <% @questions.each do |question| %>
       <tr>
         <td class="l_title"><strong><%= question.question %></strong></td>
-        <td class="td_destroy"><%= link_to 'To Answers', question_path(question), :class => "btn btn-default" %><%= link_to 'Edit', edit_question_path(question), :class => "btn btn-success btn-middle" %><%= link_to image_tag("destroy"), question_path(question), method: :delete, data: { confirm: 'Are you sure?', swal: {text: 'By confirming this you will delete this question', type: 'warning', confirm_button_text: 'Ok'} }, :class => "btn btn-danger" %></td>
+        <td class="td_destroy"><%= link_to 'To Answers', question_path(question), :class => "btn btn-default" %></td>
+        <td><%= link_to 'Edit', edit_question_path(question), :class => "btn btn-success btn-middle" %></td>
+        <td><%= link_to image_tag("destroy"), question_path(question), method: :delete, data: { confirm: 'Are you sure?', swal: {text: 'By confirming this you will delete this question', type: 'warning', confirm_button_text: 'Ok'} }, :class => "btn btn-danger" %></td>
       </tr>
   <% end %>
   </tbody>

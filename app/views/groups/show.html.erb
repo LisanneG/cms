@@ -11,20 +11,24 @@
 
 <div class="row">
 	<div class="col-md-7">
-		<div class="block"><h3>Students</h3><table id="students" class="table table-hover">
-			<thead>
-				<th>Name</th>
-				<th>Destroy</th>
-			</thead>
-			<tbody>
-			<% @group.students.each do |student| %>
-				<tr>
-					<td><%= student.name %></td>
-					<td><%= link_to image_tag("destroy"), [student.group, student], method: :delete, data: { confirm: 'Are you sure?', swal: {text: 'By confirming this you will delete this location', type: 'warning', confirm_button_text: 'Ok'} }, :class => "btn btn-danger" %></td>
-				</tr>
-			<% end %>
-			</tbody>
-		</table></div>
+		<div class="block"><h3>Students</h3>
+      <table id="students" class="table table-hover">
+        <thead>
+          <th>Name</th>
+          <th>Destroy</th>
+        </thead>
+        <tbody>
+        <% @group.students.each do |student| %>
+          <tr>
+            <td><%= student.name %></td>
+            <td><%= link_to image_tag("destroy"), [student.group, student], method: :delete,
+                            data: { confirm: 'Are you sure?', swal: {text: 'By confirming this you will delete this location',
+                            type: 'warning', confirm_button_text: 'Ok'} }, :class => "btn btn-danger" %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
 	</div>
 	<div class="block col-md-5 add_students">
 		<h3>Add Student</h3>

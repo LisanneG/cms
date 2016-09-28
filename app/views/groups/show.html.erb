@@ -20,9 +20,7 @@
 			<% @group.students.each do |student| %>
 				<tr>
 					<td><%= student.name %></td>
-					<td><%= link_to 'Destroy', [student.group, student],
-										  method: :delete,
-										  data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
+					<td><%= link_to image_tag("destroy"), [student.group, student], method: :delete, data: { confirm: 'Are you sure?', swal: {text: 'By confirming this you will delete this location', type: 'warning', confirm_button_text: 'Ok'} }, :class => "btn btn-danger" %></td>
 				</tr>
 			<% end %>
 			</tbody>

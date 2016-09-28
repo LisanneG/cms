@@ -40,7 +40,7 @@ table#locations .l_title, table#questions .l_title, table#answers .l_title .bloc
 
 /*new location*/
 .block{background-color: white; border: 1px solid #ccc; border-radius: 5px; padding: 10px;}
-.row .title input, .row .title{font-size: 20px; height: 56px; margin-bottom: 20px;}
+.row .title input, .row .title{font-size: 20px; min-height: 56px; margin-bottom: 20px;}
 .row .description_text textarea{height: 350px; margin-bottom: 20px;}
 .link-back{color: #ea647c; text-decoration: none; font-weight: bold; margin-left: 10px; line-height: 34px;}
 .link-back:hover{color: darkred;}
@@ -88,7 +88,7 @@ table#answers thead tr, table#students thead tr{background-color: #4f4e5c; color
 
 /*groups*/
 table#groups .group_key{text-align: right;}
-.row .bigscreen a.btn{float: right;}
+.row .bigscreen a.btn, .btn-loc-back{float: right;}
 table#students{margin-top: 20px}
 
 @media (min-width: 992px) {

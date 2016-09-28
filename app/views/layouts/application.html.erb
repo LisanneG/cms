@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
- <title>Cms</title>
+ <title>CMS</title>
  <%= csrf_meta_tags %>
 
  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -24,7 +24,7 @@
  <% end %>
 </div>
 <div id="topbar">
- <p>test</p>
+ <p><strong><%= yield(:title) %></strong></p>
  <div><%= image_tag ("logout.png") %><%= link_to('Logout', destroy_admin_session_path, :method => :delete, :class => 'btn') %></div>
 </div>
 <div class="container body">

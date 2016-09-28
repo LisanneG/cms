@@ -43,7 +43,7 @@ class LocationsController < ApplicationController
 	    @location.destroy
 	 
 	    redirect_to locations_path
-	end
+	end	
 
 	private
 		def location_params

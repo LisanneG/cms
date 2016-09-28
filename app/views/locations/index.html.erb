@@ -1,13 +1,13 @@
 <%= link_to 'Add a new location', new_location_path, :class => 'btn btn-info location_btn' %>
 <table id="locations" class="table table-hover">
-	<!-- <thead>
+	<thead>
 		<tr>
 			<th>Title</th>
-			<th>Show</th>
-			<th>Edit</th>
-			<th>Destroy</th>
+			<th>&nbsp;</th>
+			<th>Buttons</th>
+			<th>&nbsp;</th>
 		</tr>
-	</thead> -->
+	</thead>
 	<tbody>
 		<% @locations.each do |location| %>
 			<tr>

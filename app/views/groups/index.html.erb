@@ -1,14 +1,14 @@
-<h2>Groups</h2>
 <%= link_to 'Add a new Group', new_group_path, :class => 'btn btn-info location_btn' %>
 
 <table id="groups" class="table table-hover">
-    <!-- <thead>
+    <thead>
         <tr>
             <th>Group</th>
-            <th>ID</th>
-            <th>Destroy</th>
+            <th class="g_id">ID</th>
+            <th>&nbsp;</th>
+            <th>Buttons</th>
         </tr>
-    </thead> -->
+    </thead>
     <tbody>
     <% @groups.each do |group| %>
     <tr>

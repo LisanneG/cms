@@ -85,6 +85,9 @@
           <p>
           <h3><%= @question.question %></h3>
           </p>
+          <p>
+            <strong>Dit is een open vraag en heeft dus geen antwoorden.</strong>
+          </p>
         </div>
       </div>
     </row>
@@ -113,11 +116,6 @@
   </div>
 
 <% if @question.open? %>
-  <row>
-    <p>
-      Dit is een open vraag en heeft dus geen antwoorden.
-    </p>
-  </row>
 <% else %>
   <row>
     <div class="col-md-8">

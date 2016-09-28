@@ -43,13 +43,25 @@ table#locations .l_title{font-size: 20px;}
 .location_btn{margin-bottom: 22px;}
 
 /*new location*/
-.block{background-color: white; border: 1px solid #ccc; border-radius: 5px; padding: 10px; margin-bottom: 20px;}
-.row .title input{padding: 24px; font-size: 20px; height: 56px;}
-.row .description_text textarea{height: 350px;}
+.block{background-color: white; border: 1px solid #ccc; border-radius: 5px; padding: 10px;}
+.row .title input{font-size: 20px; height: 56px; margin-bottom: 20px;}
+.row .description_text textarea{height: 350px; margin-bottom: 20px;}
 .link-back{color: #ea647c; text-decoration: none; font-weight: bold; margin-left: 10px; line-height: 34px;}
 .link-back:hover{color: darkred;}
 .row textarea{resize: none;}
 .btns input[type=submit]{float:right;}
-.coordinates textarea{border-radius: 5px; float: right; width: 70%;}
-.coordinates select{float: right;}
+.coordinates textarea, .coordinates select{border-radius: 5px; float: right; width: 70%; height: 50px;}
+.coordinates select{height: 40px; margin-top: 5px;}
+.coordinates #location_y{margin-top: 3px;}
 .coordinates .label_xy{line-height: 49px;}
+.coordinates .location_image{float: right; margin-top: 13px; width: 258px;}
+
+@media (min-width: 992px) {
+	.bigscreen{display: block;}
+	.smallscreen{display: none;}
+}
+@media (max-width: 991px) {
+	.bigscreen{display: none;}
+	.smallscreen{display: block; margin-top: 20px;}
+	.coordinates{margin-left: 14px;}	
+}

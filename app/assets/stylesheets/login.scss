@@ -1,0 +1,71 @@
+.background {
+  background: rgb(96,151,153);
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10%;
+}
+
+.login-text {
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+.login-form {
+  border: 0.5px solid lightgray;
+  border-radius: 1.5px;
+  margin-bottom: 5%;
+  background: none;
+  width: 100%;
+  padding: 10px;
+  color: white;
+}
+
+.dashboard-login {
+  background: rgb(230,67,52);
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  width: 100%;
+  padding: 5px;
+  border: none;
+  border-radius: 2px;
+}
+
+.forgot-password {
+  color: lightgray;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.forgot-password:hover {
+  color: white;
+  text-decoration: none;
+  width: 100%;
+  text-align: center;
+}
+
+.error-messages {
+  color: rgb(230,67,52);
+  font-weight: bold;
+}
+
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  text-align: center;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  text-align: center;
+}
+
+:-ms-input-placeholder {
+  text-align: center;
+}

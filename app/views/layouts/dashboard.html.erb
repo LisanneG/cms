@@ -8,19 +8,24 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="background">
   <div class="container">
   <br>
   <% if notice != nil %>
   <p class="notice alert alert-success"><%= notice %></p>
   <% end %>
   <% if alert != nil %>
-  <p class="alert alert-danger"><%= alert %></p>
+  <p class="error-messages"><%= alert %></p>
   <% end %>
 
-
-
-    <%= yield %>
+    <row>
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <%= image_tag 'logo.png', :class => 'logo'%>
+        <%= yield %>
+      </div>
+      <div class="col-md-4"></div>
+    </row>
   </div>
   </body>
 </html>

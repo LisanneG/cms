@@ -12,43 +12,35 @@
     </div>
   <% end %>
 
-  <div class="flex">
-    <div class="title">
-      <div>
-        <%= f.text_field :title, :class => "form-control", placeholder: "Enter the name of the location here..." %>
-      </div>
-      <div>
-        <%= f.text_area :text, :class => "form-control", placeholder: "Insert your text here..." %>
-      </div>
+  <div class="row">
+    <div class="col-md-8 title">
+      <%= f.text_field :title, :class => "form-control", placeholder: "Enter the name of the location here..." %>
     </div>
-    <div>
-      <div class="block btns">
-        <%= link_to 'Cancle', locations_path, :class => "link-back" %>
+    <div class="col-md-4 btns block">
+      <%= link_to 'Cancle', locations_path, :class => "link-back" %>
         <%= f.submit :class => "btn btn-success" %>
-      </div>
-      <div class="block">
-        <p>Coordinaten</p>
-        <%= f.label :x %>
-        <%= f.text_area :x, :class => "form-control" %>
+    </div>
+  </div>
 
-        <%= f.label :y %>
-        <%= f.text_area :y, :class => "form-control" %>
-
+  <div class="row">
+    <div class="col-md-8 description_text">
+      <%= f.text_area :text, :class => "form-control", placeholder: "Insert your text here..." %>
+    </div>
+    <div class="col-md-4 block coordinates">
+      <p>Coordinates</p>
+        <%= f.label :Longitude, :class => "label_xy" %>
+        <%= f.text_area :x %>
+        <br>
+        <%= f.label :Latitude, :class => "label_xy" %>
+        <%= f.text_area :y %>
+        <br>
+        <%= f.label :Question, :class => "label_xy" %>
         <%= f.collection_select :question_id, Question.all, :id, :question %>
-        </div>
     </div>
   </div>
 
   <div>
     <%= f.file_field :image %>
   </div>
-
-  <div class="form-group">
-    <%= f.collection_select :question_id, Question.all, :id, :question %>
-  </div>
- 
-  <p>
-    <%= f.submit :class => "btn btn-success" %>
-  </p>
       
 <% end %>

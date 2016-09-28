@@ -9,7 +9,7 @@ body{background-color: #f1f5f8;}
 .body{margin-left: 280px;}
 .btn{border-radius: 2px;}
 
-.flex{display: flex; justify-content: space-between;} /*Putting blocks next to eachother*/
+/*.flex{display: flex; justify-content: space-between;}*/
 
 #navigation li {
   /*display: inline;*/
@@ -43,13 +43,13 @@ table#locations .l_title{font-size: 20px;}
 .location_btn{margin-bottom: 22px;}
 
 /*new location*/
-.block{background-color: white; border: 1px solid #ccc; border-radius: 5px; padding: 10px; width: 360px; margin-bottom: 20px;}
-.btns{height: 50px;}
-.btns input{height: 31px;}
-.flex .title{width: 66%;}
-.flex .title input{padding: 24px; font-size: 20px;}
-.flex .title textarea{height: 350px; margin-top: 20px;}
-.link-back{color: #ea647c; text-decoration: none; margin-right: 139px; font-weight: bold; margin-left: 10px;}
+.block{background-color: white; border: 1px solid #ccc; border-radius: 5px; padding: 10px; margin-bottom: 20px;}
+.row .title input{padding: 24px; font-size: 20px; height: 56px;}
+.row .description_text textarea{height: 350px;}
+.link-back{color: #ea647c; text-decoration: none; font-weight: bold; margin-left: 10px; line-height: 34px;}
 .link-back:hover{color: darkred;}
-.flex textarea{resize: none;}
-/*table#locations tr td.td_edit, table#locations tr td.td_destroy{float: right;}*/
+.row textarea{resize: none;}
+.btns input[type=submit]{float:right;}
+.coordinates textarea{border-radius: 5px; float: right; width: 70%;}
+.coordinates select{float: right;}
+.coordinates .label_xy{line-height: 49px;}

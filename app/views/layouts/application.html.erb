@@ -15,9 +15,9 @@
      <div class="disabled">
  <% end %>
  <ul>
-   <li class="active"><%= image_tag ("home1.png") %><%= link_to 'Locations', locations_path, :class => 'btn' %></li>
-   <li><%= image_tag ("vragen.png") %><%= link_to 'Questions', questions_path, :class => 'btn' %></li>
-   <li><%= link_to 'Groups', groups_path, :class => 'btn'  %></li>
+   <li class="<%= 'active' if current_page?(locations_path) %>"><%= image_tag ("home1.png") %><%= link_to 'Locations', locations_path, :class => 'btn' %></li>
+   <li class="<%= 'active' if current_page?(questions_path) %>"><%= image_tag ("vragen.png") %><%= link_to 'Questions', questions_path, :class => 'btn' %></li>
+   <li class="<%= 'active' if current_page?(groups_path) %>"><%= image_tag ("gebruikers1.png") %><%= link_to 'Groups', groups_path, :class => 'btn'  %></li>
  </ul>
  <% if not admin_signed_in? %>
      </div>

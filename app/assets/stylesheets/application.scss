@@ -87,6 +87,10 @@ table#answers{margin-top: 20px; margin-left: -15px; margin-right: -15px;}
 .add_students input[type=text]{border-radius: 5px; border: 1px solid #ccc; box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); float: right; width: 70%;}
 .add_students input[type=submit]{float: right;}
 
+/*button questions popup*/
+.modal-header .close{margin-top: -35px;}
+
+
 /*groups*/
 table#groups .group_key{text-align: right;}
 .row .bigscreen a.btn, .btn-loc-back{float: right;}

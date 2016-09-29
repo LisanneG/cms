@@ -66,6 +66,7 @@ table#groups thead .g_id{text-align: right;}
 #addQuestion .modal-footer{margin-bottom: 30px;}
 #addQuestion .modal-body{padding-bottom: 60px; text-align: center;}
 #addQuestion .modal-body input{border-radius: 5px; width: 70%;}
+#addQuestion .modal-body input.group_new{width: 100%;}
 #addQuestion .row{margin-top: 30px;}
 /*question edit*/
 .question_icon .col-md-4{text-align: center;}

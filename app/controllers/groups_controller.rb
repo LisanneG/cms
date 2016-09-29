@@ -6,6 +6,7 @@ class GroupsController < ApplicationController
 
   def index
     @groups = Group.all
+    @group = Group.new :key => rand(999999)
   end
 
   def new

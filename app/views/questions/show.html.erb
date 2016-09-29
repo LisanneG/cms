@@ -5,9 +5,8 @@
      <%= @question.question %>
     </div>
     <%= form_for([@question, @question.answers.build]) do |f| %>
-      <div class="col-md-4 btns block bigscreen col-md-offset-1">
-        <%= link_to 'Cancel', questions_path, :class => "link-back" %>
-        <%= f.submit "Create answer", :class => "btn btn-success" %>
+      <div class="col-md-4 btns bigscreen col-md-offset-1">
+        <%= link_to 'Cancel', questions_path, :class => "link-back float-right" %>
       </div>
   </div>
 
@@ -16,8 +15,11 @@
 		<%= f.label :answer %>
 		<%= f.text_field :answer %>
 		<br>
-		<%= f.label :correct %>
-		<%= f.check_box :correct %>
+     <p>
+      <%= f.label :correct %>
+      <%= f.check_box :correct %><br>
+      <%= f.submit "Create answer", :class => "btn btn-success" %>
+     </p>
 	 </div>
   </div>
     <% end %>
@@ -33,10 +35,10 @@
   	<tbody>
 		<% @question.answers.each do |answer| %>
 			<tr>
-				<td class="l_title"><% answer.answer %></td>
-				<td><% answer.correct %></td>
+				<td class="l_title"><%= answer.answer %></td>
+				<td><%= answer.correct %></td>
 				<td class="td_destroy">
-					<% link_to image_tag("destroy"), [answer.question, answer], method: :delete, data: { confirm: 'Are you sure?', swal: {text: 'By confirming this you will delete this location', type: 'warning', confirm_button_text: 'Ok'} }, :class => "btn btn-danger" %>
+					<%= link_to image_tag("destroy"), [answer.question, answer], method: :delete, data: { confirm: 'Are you sure?', swal: {text: 'By confirming this you will delete this location', type: 'warning', confirm_button_text: 'Ok'} }, :class => "btn btn-danger" %>
 				</td>
 			</tr>
 		<% end %>
@@ -51,31 +53,36 @@
 			<div class="block"><%= @question.question %></div>
 		</div>
 	<%= form_for([@question, @question.answers.build]) do |f| %>
-		<div class="col-md-5 btns block bigscreen">
-			<%= link_to 'Cancel', questions_path, :class => "link-back" %>
-			<%= f.submit "Add image", :class => "btn btn-info"  %>
+		<div class="col-md-5 btns bigscreen">
+			<%= link_to 'Cancel', questions_path, :class => "link-back float-right" %>
 		</div>		
 	</div>
 	<div class="row">
 		<div class="col-md-7">
-			<div class="block upload_img">			
+			<div class="block upload_img">
 				<h2>Images</h2>
-				<%= f.label :Choose_a_picture %>
-				<%= f.file_field :picture %>
+        <p>
+          <%= f.label :Choose_a_picture %>
+          <%= f.file_field :picture %>
+        </p>
 				<br>
-				<%= f.label :correct %>
-				<%= f.check_box :correct %>	
+        <p>
+          <%= f.label :correct %>
+          <%= f.check_box :correct %><br>
+          <%= f.submit "Add image", :class => "btn btn-info"  %>
+        </p>
 			</div>
+
 		</div>
     <% end %>
 		<div class="col-md-5 block">
 			<% @question.answers.each do |answer| %>
 			<div class="col-md-4 picture_row">
-				<% image_tag answer.picture_url.to_s, size: "100", :class => "thumbnail" %>
+				<%= image_tag answer.picture_url.to_s, size: "100", :class => "thumbnail" %>
 				<% if answer.correct? %>
-					<% image_tag("checked.png", :class => "correct") %>
+					<%= image_tag("checked.png", :class => "correct") %>
 				<% end %>
-				<% link_to image_tag("cancel"), [answer.question, answer], method: :delete, data: { confirm: 'Are you sure?', swal: {text: 'By confirming this you will delete this location', type: 'warning', confirm_button_text: 'Ok'} }, :class => "btn-del" %>
+				<%= link_to image_tag("cancel"), [answer.question, answer], method: :delete, data: { confirm: 'Are you sure?', swal: {text: 'By confirming this you will delete this location', type: 'warning', confirm_button_text: 'Ok'} }, :class => "btn-del" %>
 			</div>
 		<% end %>
 		</div>

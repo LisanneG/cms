@@ -34,8 +34,8 @@ body{background-color: #f1f5f8;}
 
 /*Locations and questions*/
 table#locations{}
-table#locations tr, table#questions tr, table#answers tr, table#groups tr, table#students tr{background-color: #ffffff; border: none;border-left: 3px solid white;}
-table#locations tbody tr:hover, table#questions tbody tr:hover, table#answers tbody tr:hover, table#groups tbody tr:hover, table#students tbody tr:hover{background-color: #f1f5f8; border-left: 3px solid #58aad9;}
+table#locations tbody tr, table#questions tbody tr, table#answers tbody tr, table#groups tbody tr, table#students tbody tr{background-color: #ffffff; border: none;border-left: 3px solid white;}
+table#locations tbody tr:hover, table#questions tbody tr:hover, table#answers tbody tr:hover, table#groups tbody tr:hover, table#students tbody tr:hover{background-color: #f1f5f8; border: 1px solid #ccc; border-left: 3px solid #58aad9;}
 table#locations tr td, table#questions tr td, table#answers tr td, table#groups tr td, table#students tr td{padding: 20px;}
 table#locations .td_destroy, table#questions .td_destroy, table#answers .td_destroy, table#groups .td_destroy, table#students .td_destroy{text-align: right;}
 table#locations .td_destroy a.btn-middle, table#questions .td_destroy a.btn-middle, table#answers .td_destroy a.btn-middle, table#groups .td_destroy a.btn-middle{margin-right: 10px; margin-left: 10px;}
@@ -77,7 +77,7 @@ table#groups thead .g_id{text-align: right;}
 .row .create_answer label:first-child{line-height: 46px;}
 .row .create_answer input[type=checkbox]{width: 30px; height: 30px; float: right;}
 table#answers{margin-top: 20px; margin-left: -15px; margin-right: -15px;}
-.row .title .block{height: 56px;}
+.row .title .block{min-height: 56px; overflow: hidden;}
 .row .upload_img input[type=file]{float: right; width: 31%;}
 .row .upload_img input[type=checkbox]{float: right; width: 25px; height: 25px;}
 

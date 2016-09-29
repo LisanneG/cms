@@ -21,19 +21,22 @@
           <thead>
           <tr>
             <th>Answer</th>
+            <th>Correct</th>
           </tr>
           </thead>
           <tbody>
           <% @question.answers.each do |answer| %>
-              <% if answer.correct? %>
-                  <tr class="success">
-                    <td><%= answer.answer %></td>
-                  </tr>
-              <% else %>
-                  <tr>
-                    <td><%= answer.answer %></td>
-                  </tr>
-              <% end %>
+              <tr>
+                <td><%= answer.answer %></td>
+                <td>
+                  <% if answer.correct? %>
+                    <%= image_tag("checked.png") %>
+                  <% else %>
+                    <%= image_tag("cancel.png") %>                    
+                  <% end %>
+
+                </td>
+              </tr>
           <% end %>
           </tbody>
         </table>

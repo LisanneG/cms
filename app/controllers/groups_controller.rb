@@ -9,10 +9,6 @@ class GroupsController < ApplicationController
     @group = Group.new :key => rand(999999)
   end
 
-  def new
-    @group = Group.new :key => rand(999999)
-  end
-
   def create
     @group = Group.new(group_params)
 

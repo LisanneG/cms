@@ -1,4 +1,5 @@
 class StudentsController < ApplicationController
+  before_action :authenticate_admin!
   def create
     @group = Group.find(params[:group_id])
     @student = @group.students.create(student_params)

@@ -114,3 +114,9 @@ table#students{margin-top: 20px}
 @media (min-width: 768px) {
 	#addQuestion .modal-dialog {width: 900px;}
 }
+
+
+/*containers*/
+@media (min-width: 1444px) {
+	.container{width: 970px;}
+}

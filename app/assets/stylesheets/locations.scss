@@ -3,13 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .location-image {
-  max-width: 350px;
-  max-height: 350px;
+  max-width: 282px;
+  max-height: 400px;
 }
 
 .location-general {
   background-color: white;
-  border-radius: 3px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
   padding: 10px;
 }
 
@@ -17,17 +18,27 @@
   background-color: white;
 }
 
+#location-answer-table thead tr{background-color: #4f4e5c; color: white;}
+#location-answer-table tbody tr {background-color: #ffffff; border: none;border-left: 3px solid white;}
+#location-answer-table tbody tr:hover{background-color: #f1f5f8; border: 1px solid #ccc; border-left: 3px solid #58aad9;}
+#location-answer-table tr td{padding: 20px;}
+table#locations .l_title{font-size: 20px;}
+
+
 .location-cor {
   background-color: white;
-  border-radius: 3px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
   padding: 10px;
+  margin-top: 10px;
 }
 
 .location-question {
-  background-color: white;
-  border-radius: 3px;
   margin: 10px auto;
   width: 100%;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
   padding: 10px;
 }
 
@@ -37,5 +48,9 @@
 }
 
 .location-btn{
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
   margin-bottom: 10px;
 }

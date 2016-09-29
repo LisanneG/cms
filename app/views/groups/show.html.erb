@@ -6,7 +6,7 @@
     <div class="block">ID:<%= @group.key %> </div>
   </div>
   	<div class="col-md-5 btns bigscreen">
-  		<%= link_to 'Done', groups_path, :class => "link-back float-right" %>
+  		<%= link_to 'Done', groups_path, :class => "btn btn-info float-right" %>
   	</div>
 </div>
 
@@ -19,13 +19,20 @@
           <th>Destroy</th>
         </thead>
         <tbody>
-        <% @group.students.each do |student| %>
-          <tr>
-            <td><%= student.name %></td>
-            <td><%= link_to image_tag("destroy"), [student.group, student], method: :delete,
-                            data: { confirm: 'Are you sure?', swal: {text: 'By confirming this you will delete this location',
-                            type: 'warning', confirm_button_text: 'Ok'} }, :class => "btn btn-danger" %></td>
-          </tr>
+        <% if @group.students.empty? %>
+            <tr>
+              <td>There are no students to display</td>
+              <td></td>
+            </tr>
+        <% else %>
+          <% @group.students.each do |student| %>
+            <tr>
+              <td><%= student.name %></td>
+              <td><%= link_to image_tag("destroy"), [student.group, student], method: :delete,
+                              data: { confirm: 'Are you sure?', swal: {text: 'By confirming this you will delete this location',
+                              type: 'warning', confirm_button_text: 'Ok'} }, :class => "btn btn-danger" %></td>
+            </tr>
+          <% end %>
         <% end %>
         </tbody>
       </table>

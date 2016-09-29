@@ -19,7 +19,7 @@
      <p>
       <%= f.label :correct %>
       <%= f.check_box :correct %><br>
-      <%= f.submit "Create answer", :class => "btn btn-success" %>
+      <%= f.submit :class => "btn btn-success" %>
      </p>
 	 </div>
   </div>
@@ -74,14 +74,14 @@
         <p>
           <%= f.label :correct %>
           <%= f.check_box :correct %><br>
-          <%= f.submit "Create answer image", :class => "btn btn-info"  %>
+          <%= f.submit :class => "btn btn-info"  %>
         </p>
 			</div>
 
 		</div>
     <% end %>
 		<div class="col-md-5 block">
-			<% @question.answers.each do |answer| %>
+      <% @question.answers.each do |answer| %>
 			<div class="col-md-4 picture_row">
 				<%= image_tag answer.picture_url.to_s, size: "100", :class => "thumbnail" %>
 				<% if answer.correct? %>

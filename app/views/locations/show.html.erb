@@ -6,7 +6,7 @@
           <%= @location.title %>
         </h1>
         <p>
-          <%= @location.text %>
+          <%= h(@location.text).gsub(/\n/, '<br/>').html_safe %>
         </p>
       </div>
 
@@ -107,11 +107,11 @@
     <div class="location-cor">
       <p>
         longtitude:
-        <strong><%= @location.y %></strong><br>
+        <strong><%= @location.x %></strong><br>
       </p>
       <p>
         latitude:
-        <strong><%= @location.x %></strong>
+        <strong><%= @location.y %></strong>
       </p>
     </div>
   </div>

@@ -29,9 +29,7 @@ bbt.save!
 qbbt = Question.new
 qbbt.id = 1
 qbbt.question = "In welk jaar is de Brandenburger Tor gebouwd?"
-qbbt.multiple_choice = true
-qbbt.multiple_choice_image = false
-qbbt.open = false
+qbbt.question_type = "multiple_choice"
 qbbt.save!
 
 user = Admin.new

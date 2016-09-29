@@ -16,6 +16,13 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    if @question.question_type == "multiple_choice"
+      render 'multiple_choice'
+    elsif @question.question_type == "multiple_choice_image"
+      render 'multiple_choice_image'
+    elsif @question.question_type == "open"
+      render 'open'
+    end
   end
 
   def index

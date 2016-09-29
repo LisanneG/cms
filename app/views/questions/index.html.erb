@@ -26,17 +26,17 @@
           <div class="col-xs-4">
             <%= image_tag ("ico-simple.jpg") %><br>
             <%= f.label :Open_question %>
-            <%= f.check_box :open %>
+            <%= f.radio_button :question_type, "open" %>
           </div>
           <div class="col-xs-4">
             <%= image_tag ("ico-image.jpg") %><br>
             <%= f.label :Question_with_an_image %>
-            <%= f.check_box :multiple_choice_image %>
+            <%= f.radio_button :question_type, "multiple_choice_image" %>
           </div>
           <div class="col-xs-4">            
             <%= image_tag ("ico-multiple.jpg") %><br>
             <%= f.label :Multiple_choice%>
-            <%= f.check_box :multiple_choice %>
+            <%= f.radio_button :question_type, "multiple_choice" %>
           </div>
         </div>
       </div>

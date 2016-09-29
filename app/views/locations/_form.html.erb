@@ -27,7 +27,7 @@
       <%= f.text_area :text, :class => "form-control", placeholder: "Insert your text here..." %>
     </div>
     <div class="col-md-4 block coordinates">
-      <p>Options</p>
+        <h3>Info</h3>
         <%= f.label :Longitude, :class => "label_xy" %>
         <%= f.text_area :x %>
         <br>
@@ -42,7 +42,7 @@
     </div>
   </div>
   <div class="smallscreen block">
-    <%= link_to 'Cancle', locations_path, :class => "link-back" %>
+    <%= link_to 'Cancel', locations_path, :class => "link-back" %>
     <%= f.submit :class => "btn btn-success" %>
   </div>
 

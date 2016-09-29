@@ -1,11 +1,12 @@
-<h1>Groups</h1>
 <div class="row">
-	<div class="col-md-7 title">
+	<div class="col-md-4 title">
 		<div class="block"><%= @group.group %></div>
-  	</div>
-  	<div class="col-md-5 btns block bigscreen">
-  		<%= link_to 'Cancel', groups_path, :class => "link-back" %>
-  		<%= link_to 'Done', questions_path, :class => "btn btn-info" %> 		  	
+  </div>
+  <div class="col-md-3 title">
+    <div class="block">ID:<%= @group.key %> </div>
+  </div>
+  	<div class="col-md-5 btns bigscreen">
+  		<%= link_to 'Done', groups_path, :class => "link-back float-right" %>
   	</div>
 </div>
 

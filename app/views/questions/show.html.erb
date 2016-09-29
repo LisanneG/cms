@@ -5,8 +5,8 @@
 	 <%= @question.question %>
   </div>
   <%= form_for([@question, @question.answers.build]) do |f| %>
-	 <div class="col-md-4 btns block bigscreen col-md-offset-1">
-		<%= link_to 'Cancel', questions_path, :class => "link-back" %>          
+	 <div class="col-md-4 btns bigscreen col-md-offset-1">
+		<%= link_to 'Cancel', questions_path, :class => "link-back float-right" %>
 	 </div>
   </div>
 

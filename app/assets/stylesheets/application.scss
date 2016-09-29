@@ -11,6 +11,10 @@ body{background-color: #f1f5f8;}
 .body{margin-left: 280px;}
 .btn{border-radius: 2px;}
 
+.float-right {
+  float: right;
+}
+
 #navigation{background-color: #4f4e5c; position: fixed; top: 0; left: 0; width: 260px; z-index: 1; overflow-x: hidden; height: 100%;}
 #navigation ul{margin-left: -40px !important;}
 #navigation li.active, #navigation li:hover{background-color: #469695;}

@@ -32,9 +32,4 @@ qbbt.question = "In welk jaar is de Brandenburger Tor gebouwd?"
 qbbt.question_type = "multiple_choice"
 qbbt.save!
 
-user = Admin.new
-user.email = "test@mail.com"
-user.password = "standardpassword"
-user.password_confirmation = "standardpassword"
-user.save!
 

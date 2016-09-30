@@ -19,7 +19,7 @@ die ooit werden gebruikt door wachters en douanebeambten. De bas-reliëfs lijken
 Volgens kunsthistorica Zitha Pöthe is het een symbolische verbeelding van de gevoerde strijd door het Pruisische leger.
 Rechts zou Frederik Willem II staan die koning Lodewijk XVI neerslaat. Verder naar links Wilhelmina van Pruisen,
 zijn zuster, de vrouw van stadhouder Willem V, wier aanhouding bij Goejanverwellesluis de directe aanleiding was voor de bezetting"
-
+bbt.image = "logo.png"
 bbt.x = "13.377704"
 bbt.y = "52.516275"
 bbt.question_id = 1

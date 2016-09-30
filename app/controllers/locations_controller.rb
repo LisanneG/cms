@@ -7,7 +7,11 @@ class LocationsController < ApplicationController
 	def show
 		@location = Location.find(params[:id])
 		@question_id = @location.question_id
-		@question = Question.find(@question_id)
+		if Question.exists?(@question_id)
+			@question = Question.find(@question_id)
+		else
+			@question = "none"
+		end
 	end
 
 	def new

@@ -2,6 +2,10 @@ class LocationsController < ApplicationController
 	before_action :authenticate_admin!
 	def index
 		@locations = Location.all
+
+		respond_to do |format|
+			format.json { render :json => @locations.to_json }
+		end
 	end
 
 	def show

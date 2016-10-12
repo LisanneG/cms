@@ -9,13 +9,17 @@ class GroupsController < ApplicationController
     @group = Group.new :key => rand(999999)
   end
 
+  def new
+    @group = Group.new :key => rand(999999)
+  end
+
   def create
     @group = Group.new(group_params)
 
     if @group.save
-      redirect_to @group
+      redirect_to groups_path
     else
-      render 'new'
+      redirect_to new_group_path
     end
   end
 

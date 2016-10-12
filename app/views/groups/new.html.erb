@@ -1,0 +1,17 @@
+<%= form_for @group do |f| %>
+<div class="alert alert-danger">
+	<p>Please insert a group name before continuing</p>
+</div>
+<h2>What is the group name?</h2>
+<div class="row">
+	<div class="col-md-8 title">
+		<%= f.text_field :group, :class => "form-control group_new", placeholder: "Enter the name of the group here..." %>
+		<%= f.hidden_field :key %>  
+	</div>
+	<div class="col-md-4">
+		<div class="block">
+			<%= f.submit :class => "btn btn-success" %>
+		</div>
+	</div>
+</div>
+<% end %>	

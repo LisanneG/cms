@@ -10,6 +10,19 @@
   	</div>
 </div>
 
+<% if @group.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+    <%= pluralize(@group.errors.count, "error") %> prohibited this student from being saved:
+    </h2>
+      <ul>
+      <% @group.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+  </div>
+<% end %>
+
 <div class="row">
 	<div class="col-md-7">
 		<div class="block"><h3>Students</h3>

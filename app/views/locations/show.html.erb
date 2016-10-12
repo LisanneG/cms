@@ -1,129 +1,173 @@
-<% if @question.question_type == "multiple_choice" %>
-  <row>
-    <div class="col-md-8">
-      <div class="location-general">
-        <h1>
-          <%= @location.title %>
-        </h1>
+<% if @question.is_a? String %>
+
+    <row>
+        <div class="col-md-8">
+          <div class="location-general">
+            <h1>
+              <%= @location.title %>
+            </h1>
+            <p>
+              <%= @location.text %>
+            </p>
+          </div>
+
+          <div class="location-question">
+            <h3>No question to display</h3>
+            <p><strong>The question who was previously attached to this location has been deleted or there were no questions to be attached.</strong></p>
+            <p>Please make another question or use an existing question and attach it to this location by clicking on the edit button.</p>
+          </div>
+          <%= link_to 'Create a new question', questions_path, :class => "btn btn-info" %>
+        </div>
+      </row>
+
+    <div class="col-md-4">
+      <div class="location-btn">    
+        <%= link_to 'Edit', edit_location_path, :class => "btn btn-success" %>
+        <%= link_to 'Back', locations_path, :class => "btn btn-info btn-loc-back" %>
+      </div>
+      <div class="location-image">
+        <%= image_tag @location.image_url.to_s, class: "location-image" %>
+      </div>
+      <div class="location-cor">
         <p>
-          <%= h(@location.text).gsub(/\n/, '<br/>').html_safe %>
+          longtitude:
+          <strong><%= @location.x %></strong><br>
+        </p>
+        <p>
+          latitude:
+          <strong><%= @location.y %></strong>
         </p>
       </div>
+    </div>
 
-      <div class="location-question">
-        <p>
-         <h3><%= @question.question %></h3>
-        </p>
+<% else %>
+  <% if @question.question_type == "multiple_choice" %>
+    <row>
+      <div class="col-md-8">
+        <div class="location-general">
+          <h1>
+            <%= @location.title %>
+          </h1>
+          <p>
+            <%= h(@location.text).gsub(/\n/, '<br/>').html_safe %>
+          </p>
+        </div>
+
+        <div class="location-question">
+          <p>
+           <h3><%= @question.question %></h3>
+          </p>
+        </div>
+
+        <div id="location-answer-table">
+          <table class="table table-hover" id="location-answer-table">
+            <thead>
+            <tr>
+              <th>Answer</th>
+              <th>Correct</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% @question.answers.each do |answer| %>
+                <tr>
+                  <td><%= answer.answer %></td>
+                  <td>
+                    <% if answer.correct? %>
+                      <%= image_tag("checked.png") %>
+                    <% else %>
+                      <%= image_tag("cancel.png") %>                    
+                    <% end %>
+
+                  </td>
+                </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
       </div>
+    </row>
+  <% end %>
 
-      <div id="location-answer-table">
-        <table class="table table-hover" id="location-answer-table">
-          <thead>
-          <tr>
-            <th>Answer</th>
-            <th>Correct</th>
-          </tr>
-          </thead>
-          <tbody>
+
+  <% if @question.question_type == "multiple_choice_image" %>
+      <row>
+        <div class="col-md-8">
+          <div class="location-general">
+            <h1>
+              <%= @location.title %>
+            </h1>
+            <p>
+              <%= @location.text %>
+            </p>
+          </div>
+
+          <div class="location-question">
+            <p>
+              <h3><%= @question.question %></h3>
+            </p>
+          </div>
           <% @question.answers.each do |answer| %>
               <tr>
-                <td><%= answer.answer %></td>
-                <td>
-                  <% if answer.correct? %>
-                    <%= image_tag("checked.png") %>
-                  <% else %>
-                    <%= image_tag("cancel.png") %>                    
-                  <% end %>
-
-                </td>
+                <td><%= image_tag answer.picture_url.to_s, class: "question-image-answer"  %></td>
               </tr>
-          <% end %>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </row>
-<% end %>
-
-
-<% if @question.question_type == "multiple_choice_image" %>
-    <row>
-      <div class="col-md-8">
-        <div class="location-general">
-          <h1>
-            <%= @location.title %>
-          </h1>
-          <p>
-            <%= @location.text %>
-          </p>
+            <% end %>
         </div>
+      </row>
+  <% end %>
 
-        <div class="location-question">
-          <p>
+  <% if @question.question_type == "open" %>
+
+      <row>
+        <div class="col-md-8">
+          <div class="location-general">
+            <h1>
+              <%= @location.title %>
+            </h1>
+            <p>
+              <%= @location.text %>
+            </p>
+          </div>
+
+          <div class="location-question">
+            <p>
             <h3><%= @question.question %></h3>
-          </p>
+            </p>
+            <p>
+              <strong>Dit is een open vraag en heeft dus geen antwoorden.</strong>
+            </p>
+          </div>
         </div>
-        <% @question.answers.each do |answer| %>
-            <tr>
-              <td><%= image_tag answer.picture_url.to_s, class: "question-image-answer"  %></td>
-            </tr>
-          <% end %>
+      </row>
+  <% end %>
+
+
+
+    <div class="col-md-4">
+      <div class="location-btn">    
+        <%= link_to 'Edit', edit_location_path, :class => "btn btn-success" %>
+        <%= link_to 'Back', locations_path, :class => "btn btn-info btn-loc-back" %>
       </div>
-    </row>
-<% end %>
+      <div class="location-image">
+        <%= image_tag @location.image_url.to_s, class: "location-image" %>
+      </div>
+      <div class="location-cor">
+        <p>
+          longtitude:
+          <strong><%= @location.x %></strong><br>
+        </p>
+        <p>
+          latitude:
+          <strong><%= @location.y %></strong>
+        </p>
+      </div>
+    </div>
 
-<% if @question.question_type == "open" %>
-
+  <% if @question.question_type == "open" %>
+  <% else %>
     <row>
       <div class="col-md-8">
-        <div class="location-general">
-          <h1>
-            <%= @location.title %>
-          </h1>
-          <p>
-            <%= @location.text %>
-          </p>
-        </div>
-
-        <div class="location-question">
-          <p>
-          <h3><%= @question.question %></h3>
-          </p>
-          <p>
-            <strong>Dit is een open vraag en heeft dus geen antwoorden.</strong>
-          </p>
-        </div>
+        <%= link_to 'Edit Answers', question_path(@question), :class => "btn btn-default" %>
       </div>
     </row>
-<% end %>
-
-
-
-  <div class="col-md-4">
-    <div class="location-btn">    
-      <%= link_to 'Edit', edit_location_path, :class => "btn btn-success" %>
-      <%= link_to 'Back', locations_path, :class => "btn btn-info btn-loc-back" %>
-    </div>
-    <div class="location-image">
-      <%= image_tag @location.image_url.to_s, class: "location-image" %>
-    </div>
-    <div class="location-cor">
-      <p>
-        longtitude:
-        <strong><%= @location.x %></strong><br>
-      </p>
-      <p>
-        latitude:
-        <strong><%= @location.y %></strong>
-      </p>
-    </div>
-  </div>
-
-<% if @question.question_type == "open" %>
-<% else %>
-  <row>
-    <div class="col-md-8">
-      <%= link_to 'Edit Answers', question_path(@question), :class => "btn btn-default" %>
-    </div>
-  </row>
+  <% end %>
 <% end %>

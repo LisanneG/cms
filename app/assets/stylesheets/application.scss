@@ -79,7 +79,7 @@ table#groups thead .g_id{text-align: right;}
 .row .create_answer input[type=checkbox]{width: 30px; height: 30px; float: right;}
 table#answers{margin-top: 20px; margin-left: -15px; margin-right: -15px;}
 .row .title .block{min-height: 56px; overflow: hidden;}
-.row .upload_img input[type=file]{float: right; width: 31%;}
+.row .upload_img input[type=file]{float: right; width: 57%;}
 .row .upload_img input[type=checkbox]{float: right; width: 25px; height: 25px;}
 
 /*editing picture choice*/
@@ -88,6 +88,7 @@ table#answers{margin-top: 20px; margin-left: -15px; margin-right: -15px;}
 .row .picture_row .correct{position: absolute; top: 96px; left: 6px;}
 .row .picture_row .btn-del{position: absolute; top: -7px; left: 103px;}
 .pictures_block{margin-top: 20px;}
+.question_img{min-height: 209px;}
 
 .add_students input[type=text]{border-radius: 5px; border: 1px solid #ccc; box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); float: right; width: 70%;}
 .add_students input[type=submit]{float: right;}
@@ -95,6 +96,8 @@ table#answers{margin-top: 20px; margin-left: -15px; margin-right: -15px;}
 /*button questions popup*/
 .modal-header .close{margin-top: -35px;}
 
+.checkbox_question{float: right; width: 20px; height: 20px;}
+.answer_table{margin-left: -15px;}
 
 /*groups*/
 table#groups .group_key{text-align: right;}

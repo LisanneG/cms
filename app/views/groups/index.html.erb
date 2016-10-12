@@ -1,6 +1,8 @@
 <%#= link_to 'Add a new Group', new_group_path, :class => 'btn btn-info location_btn' %>
 <button type="button" class="btn btn-info location_btn" data-toggle="modal" data-target="#addQuestion">Add a new group</button>
 
+<%= @error_message %>
+
 <table id="groups" class="table table-hover">
     <thead>
         <tr>
@@ -24,28 +26,14 @@
 
 
 <%= form_for @group do |f| %>
-<% if @group.errors.any? %>
-        <div id="error_explanation">
-          <h2>
-            <%= pluralize(@group.errors.count, "error") %> prohibited
-            this article from being saved:
-          </h2>
-          <ul>
-            <% @group.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
-    <% end %>
-
 <div id="addQuestion" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <div class="modal-header">      
+        <button type="button" class="close" data-dismiss="modal">&times;</button>   
         <h4 class="modal-title">What is the group name?</h4>
       </div>
-      <div class="modal-body">
+      <div class="modal-body">        
         <%= f.text_field :group, :class => "form-control group_new", placeholder: "Enter the name of the group here..." %>
         <%= f.hidden_field :key %>        
       </div>

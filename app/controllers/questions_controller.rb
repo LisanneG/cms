@@ -16,18 +16,28 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
-    if @question.question_type == "multiple_choice"
-      render 'multiple_choice'
-    elsif @question.question_type == "multiple_choice_image"
-      render 'multiple_choice_image'
-    elsif @question.question_type == "open"
-      render 'open'
+
+      respond_to do |format|
+        if @question.question_type == "multiple_choice"
+          format.html { render 'multiple_choice' }
+          format.json { render :json => @question.to_json(:include => [:answers])}
+        elsif @question.question_type == "multiple_choice_image"
+          format.html {  render 'multiple_choice_image' }
+          format.json { render :json => @question.to_json(:include => [:answers])}
+        elsif @question.question_type == "open"
+          format.html { render 'open' }
+          format.json { render :json => @question.to_json(:include => [:answers])}
+        end
+      end
     end
-  end
 
   def index
     @questions = Question.all
     @question = Question.new
+    respond_to do |format|
+      format.html
+      format.json { render :json => @questions.to_json(:include => [:answers])}
+    end
   end
 
   def edit

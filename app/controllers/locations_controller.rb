@@ -4,6 +4,7 @@ class LocationsController < ApplicationController
 		@locations = Location.all
 
 		respond_to do |format|
+			format.html
 			format.json { render :json => @locations.to_json }
 		end
 	end
@@ -11,10 +12,15 @@ class LocationsController < ApplicationController
 	def show
 		@location = Location.find(params[:id])
 		@question_id = @location.question_id
-		if Question.exists?(@question_id)
+
+		if @question_id != nil
 			@question = Question.find(@question_id)
 		else
 			@question = "none"
+		end
+		respond_to do |format|
+			format.html
+			format.json { render :json => @location.to_json }
 		end
 	end
 

@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  before_action :authenticate_admin!
+  before_action :authenticate_admin!, :except => [:index, :show]
   def show
     @group = Group.find(params[:id])
   end

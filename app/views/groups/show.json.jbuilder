@@ -1,0 +1,1 @@
+json.students @group.students, :id, :name

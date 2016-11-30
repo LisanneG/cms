@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20160929085256) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -25,8 +28,8 @@ ActiveRecord::Schema.define(version: 20160929085256) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.index ["email"], name: "index_admins_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_admins_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
   end
 
   create_table "answers", force: :cascade do |t|
@@ -36,7 +39,7 @@ ActiveRecord::Schema.define(version: 20160929085256) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "picture"
-    t.index ["question_id"], name: "index_answers_on_question_id"
+    t.index ["question_id"], name: "index_answers_on_question_id", using: :btree
   end
 
   create_table "groups", force: :cascade do |t|
@@ -70,7 +73,9 @@ ActiveRecord::Schema.define(version: 20160929085256) do
     t.integer  "group_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["group_id"], name: "index_students_on_group_id"
+    t.index ["group_id"], name: "index_students_on_group_id", using: :btree
   end
 
+  add_foreign_key "answers", "questions"
+  add_foreign_key "students", "groups"
 end

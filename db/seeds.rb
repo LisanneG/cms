@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+=begin
 bbt = Location.new
 bbt.title = "Brandenburger Tor"
 bbt.text =  "De Brandenburger Tor is de enige bewaard gebleven stadspoort van Berlijn.
@@ -31,5 +32,12 @@ qbbt.id = 1
 qbbt.question = "In welk jaar is de Brandenburger Tor gebouwd?"
 qbbt.question_type = "multiple_choice"
 qbbt.save!
+=end
 
+
+admin = Admin.new
+admin.email = "admin@mail.com"
+admin.password = "password"
+admin.password_confirmation = "password"
+admin.save!
 

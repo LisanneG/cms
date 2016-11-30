@@ -18,10 +18,6 @@ class LocationsController < ApplicationController
 		else
 			@question = "none"
 		end
-		respond_to do |format|
-			format.html
-			format.json { render :json => @location.to_json }
-		end
 	end
 
 	def new

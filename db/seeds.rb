@@ -6,7 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-=begin
 bbt = Location.new
 bbt.title = "Brandenburger Tor"
 bbt.text =  "De Brandenburger Tor is de enige bewaard gebleven stadspoort van Berlijn.
@@ -23,17 +22,7 @@ zijn zuster, de vrouw van stadhouder Willem V, wier aanhouding bij Goejanverwell
 bbt.image = "logo.png"
 bbt.x = "13.377704"
 bbt.y = "52.516275"
-bbt.question_id = 1
 bbt.save!
-
-
-qbbt = Question.new
-qbbt.id = 1
-qbbt.question = "In welk jaar is de Brandenburger Tor gebouwd?"
-qbbt.question_type = "multiple_choice"
-qbbt.save!
-=end
-
 
 admin = Admin.new
 admin.email = "admin@mail.com"

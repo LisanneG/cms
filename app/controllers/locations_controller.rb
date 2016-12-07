@@ -7,7 +7,6 @@ class LocationsController < ApplicationController
 	def show
 		@location = Location.find(params[:id])
 		@question_id = @location.question_id
-
 		if @question_id != nil
 			@question = Question.find(@question_id)
 		else
@@ -54,4 +53,7 @@ class LocationsController < ApplicationController
 		def location_params
 			params.require(:location).permit(:title, :text, :x, :y, :completed , :question_id, :image)
 		end
+
 end
+
+

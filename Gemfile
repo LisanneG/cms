@@ -16,7 +16,9 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+gem 'jpbuilder'
 gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
+gem 'active_model_serializers', '~> 0.10.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

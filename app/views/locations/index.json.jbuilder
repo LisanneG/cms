@@ -1,1 +1,1 @@
-json.locations @locations, :id, :title
+json.locations @locations, :id, :title, :image
